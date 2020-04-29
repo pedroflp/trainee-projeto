@@ -10,6 +10,9 @@ class Especialidade (models.Model):
     def __str__ (self):
         return self.titulo
 
+    class Meta:
+        ordering = ['titulo']
+
 
 class Consulta (models.Model):
     nome = models.CharField(max_length=100)
@@ -25,6 +28,11 @@ class Consulta (models.Model):
 
     turno = models.CharField(max_length=10, choices=turnos, default='manha')
     info_adicionais = models.TextField(blank=True)
+    respondida = models.BooleanField()
 
-    
-    
+    def __str__ (self):
+        valor = "[Respondida] " if self.respondida else "[Em espera] "
+        return valor + self.email
+
+    class Meta:
+        ordering = ['respondida', 'id']

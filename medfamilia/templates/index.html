@@ -23,7 +23,7 @@
     <h2>Agende sua consulta</h2>
 
     <form action="{% url 'index' %}" method="POST">
-        {% csrf_token %}1
+        {% csrf_token %}
 
         {% if erro %}
             {{erro}}
