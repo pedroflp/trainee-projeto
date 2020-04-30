@@ -1,8 +1,214 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block body %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+{% endblock %}
 
-    <p>index</p>
+
+{% block body %}
+    <section id="agendar-sua-consulta">
+        <div class="agendar-sua-consulta-container">
+            <div class="agendar-sua-consulta-content">
+                <!-- Fluxo de Processo -->
+                <div class="fluxo-de-processo">
+                    <!-- Processo 1 -->
+                    <div id="fluxo-de-processo-1" class="fluxo-de-processo-1 processo-ativo">
+                        <div class="fluxo-de-processo-1-imagem"><img src="{% static '/imagens/fluxo-de-processo/calendario.svg' %}"></div>
+                        <div class="fluxo-de-processo-1-informacoes">
+                            <h3 class="fluxo-de-processo-1-titulo">Solicite sua Consulta</h3>
+                            <p class="fluxo-de-processo-1-paragrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utlabore etdolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <!-- Processo 2 -->
+                    <div id="fluxo-de-processo-2" class="fluxo-de-processo-2">
+                        <div class="fluxo-de-processo-2-imagem"><img src="{% static '/imagens/fluxo-de-processo/enfermeira.svg' %}"></div>
+                        <div class="fluxo-de-processo-2-informacoes">
+                            <h3 class="fluxo-de-processo-2-titulo">Triagem</h3>
+                            <p class="fluxo-de-processo-2-paragrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utlabore etdolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <!-- Processo 3 -->
+                    <div id="fluxo-de-processo-3" class="fluxo-de-processo-3">
+                        <div class="fluxo-de-processo-3-imagem"><img src="{% static '/imagens/fluxo-de-processo/estetoscopio.svg' %}"></div>
+                        <div class="fluxo-de-processo-3-informacoes">
+                            <h3 class="fluxo-de-processo-3-titulo">Consulta</h3>
+                            <p class="fluxo-de-processo-3-paragrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utlabore etdolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    <!-- Processo 4 -->
+                    <div id="fluxo-de-processo-4" class="fluxo-de-processo-4">
+                        <div class="fluxo-de-processo-4-imagem"><img src="{% static '/imagens/fluxo-de-processo/checklist.svg' %}"></div>
+                        <div class="fluxo-de-processo-4-informacoes">
+                            <h3 class="fluxo-de-processo-4-titulo">Pós-Consulta</h3>
+                            <p class="fluxo-de-processo-4-paragrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utlabore etdolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botões para selecionar o Processo -->
+                <div class="fluxo-de-processo-botoes">
+                    <div id="fluxo-de-processo-1-botao" class="fluxo-de-processo-1-botao processo-ativo"><button id="processo-1-botao"></button></div>
+                    <div id="fluxo-de-processo-2-botao" class="fluxo-de-processo-2-botao"><button id="processo-2-botao"></button></div>
+                    <div id="fluxo-de-processo-3-botao" class="fluxo-de-processo-3-botao"><button id="processo-3-botao"></button></div>
+                    <div id="fluxo-de-processo-4-botao" class="fluxo-de-processo-4-botao"><button id="processo-4-botao"></button></div>        
+                </div>
+
+                <!-- Formulário de Consulta -->
+                <div class="formulario-agendar-consulta">
+                    <h1>Agende sua Consulta</h1>
+                    <form action="" id="formulario-agendamento-consulta" class="formulario-agendamento-consulta">
+                        <!-- Nome -->
+                        <div class="nome-input-formulario-agendar-consulta">
+                            <h3>Nome *</h3>
+                            <input type="text" id="nome-input-form-agendamento" class="nome-input-form-agendamento" placeholder="Digite seu Nome" required>
+                        </div>
+                        <!-- Email -->
+                        <div class="email-input-formulario-agendar-consulta">
+                            <h3>Email *</h3>
+                            <input type="text" id="email-input-form-agendamento" class="email-input-form-agendamento" placeholder="Digite seu melhor email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                        </div>
+                        <!-- Telefone -->
+                        <div class="telefone-input-formulario-agendar-consulta">
+                            <h3>Telefone *</h3>
+                            <input type="tel" id="telefone-input-form-agendamento" class="telefone-input-form-agendamento" placeholder="Digite seu Telefone" minlength="10" maxlength="10" required>
+                        </div>
+                        <!-- Especialidade -->
+                        <div class="especialidade-select-formulario-agendar-consulta">
+                            <h3>Especialidade *</h3>
+                            <select id="especialidade-select" class="especialidade-select" required>
+                                <option value="">Selecione a Especialidade</option>
+                                <option id="especialidade-acupuntura" value="Acupuntura">Acupuntura</option>
+                                <option id="especialidade-angiologia" value="Angiologia">Angiologia</option>
+                                <option id="especialidade-cardiologia" value="Cardiologia">Cardiologia</option>
+                                <option id="especialidade-clínica Geral" value="Clínica Geral">Clínica Geral</option>
+                                <option id="especialidade-dermatologia" value="Dermatologia">Dermatologia</option>
+                                <option id="especialidade-endocrinologia" value="Endocrinologia">Endocrinologia</option>
+                                <option id="especialidade-fisioterapia" value="Fisioterapia">Fisioterapia</option>
+                                <option id="especialidade-fonoaudiologia" value="Fonoaudiologia">Fonoaudiologia</option>
+                                <option id="especialidade-gastroenterolo" value="Gastroenterologia">Gastroenterologia</option>
+                                <option id="especialidade-geriatria" value="Geriatria">Geriatria</option>
+                                <option id="especialidade-ginecologia" value="Ginecologia">Ginecologia</option>
+                                <option id="especialidade-hematologia" value="Hematologia">Hematologia</option>
+                                <option id="especialidade-mastologia" value="Mastologia">Mastologia</option>
+                                <option id="especialidade-nefrologia" value="Nefrologia">Nefrologia</option>
+                                <option id="especialidade-neurologia" value="Neurologia">Neurologia</option>
+                                <option id="especialidade-nutrição" value="Nutrição">Nutrição</option>
+                                <option id="especialidade-otorrinolaringologia" value="Otorrinolaringologia">Otorrinolaringologia</option>
+                                <option id="especialidade-pediatria" value="Pediatria">Pediatria</option>
+                                <option id="especialidade-pneumologia" value="Pneumologia">Pneumologia</option>
+                                <option id="especialidade-proctologia" value="Proctologia">Proctologia</option>
+                                <option id="especialidade-psicologia" value="Psicologia">Psicologia</option>
+                                <option id="especialidade-psiquiatria" value="Psiquiatria">Psiquiatria</option>
+                                <option id="especialidade-reumatologia" value="Reumatologia">Reumatologia</option>
+                                <option id="especialidade-urologia" value="Urologia">Urologia</option>
+                            </select>
+                        </div>
+                        <!-- Data e Turno -->
+                        <div class="data-select-container">
+                            <!-- Data -->
+                            <div class="data-select-formulario-agendar-consulta input-group date">
+                                <h3>Data *</h3>
+                                <input type="text" title="Selecione uma data do calendário." class="data-input-select-form-agendamento form-control" id="data-input-select-form-agendamento" placeholder="Selecione a Data" min="1" max="31" maxlength="10" required>
+                            </div>
+                            <!-- Turno -->
+                            <div class="turno-select-formulario-agendar-consulta">
+                                <h3>Turno *</h3>
+                                <select id="turno-select" class="turno-select" required>
+                                    <option value="">Selecione o Turno</option>
+                                    <option id="turno-manhã" value="Manhã">Manhã</option>
+                                    <option id="turno-tarde" value="Tarde">Tarde</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Mensagem -->
+                        <div class="mensagem-input-formulario-agendar-consulta">
+                            <h3>Informações adicionais</h3>
+                            <textarea name="" id="mensagem-input-form-agendamento" class="mensagem-input-form-agendamento" cols="50" rows="5" placeholder="Digite sua mensagem"></textarea>   
+                        </div>
+                        <!-- Botão - Enviar Formulário -->
+                        <div class="enviar-solicitacao-formulario">
+                            <input type="submit" id="botao-enviar-solicitacao-formulario" class="botao-enviar-solicitacao-formulario" value="Enviar Solicitação">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}
+
+
+{% block script %}
+    <!-- // Script Codes -->
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/src/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+
+    <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script> 
+    <script src="{% static '/js/bootstrap-datepicker.pt-BR.min.js' %}" charset="UTF-8"></script>
+
+    <!-- Processo Ativo - Botões -->
+    <script>
+        // Botão Processo 1
+        $("#fluxo-de-processo-1-botao, #fluxo-de-processo-1").click(function(){
+            $("div").removeClass("processo-ativo");
+            $("div").removeClass("processo-ativo");
+
+            $("div #fluxo-de-processo-1").addClass("processo-ativo");
+            $("div #fluxo-de-processo-1-botao").addClass("processo-ativo");
+        });
+        // Botão Processo 2
+        $("#fluxo-de-processo-2-botao, #fluxo-de-processo-2").click(function(){
+            $("div").removeClass("processo-ativo");
+            $("div").removeClass("processo-ativo");
+
+            $("div #fluxo-de-processo-2").addClass("processo-ativo");
+            $("div #fluxo-de-processo-2-botao").addClass("processo-ativo");
+        });
+        // Botão Processo 3
+        $("#fluxo-de-processo-3-botao, #fluxo-de-processo-3").click(function(){
+            $("div").removeClass("processo-ativo");
+            $("div").removeClass("processo-ativo");
+
+            $("div #fluxo-de-processo-3").addClass("processo-ativo");
+            $("div #fluxo-de-processo-3-botao").addClass("processo-ativo");
+        });
+        // Botão Processo 4
+        $("#fluxo-de-processo-4-botao, #fluxo-de-processo-4").click(function(){
+            $("div").removeClass("processo-ativo");
+            $("div").removeClass("processo-ativo");
+
+            $("div #fluxo-de-processo-4").addClass("processo-ativo");
+            $("div #fluxo-de-processo-4-botao").addClass("processo-ativo");
+        });
+    </script>
+
+    <!-- Formulário de Agendamento -->
+    <script>
+        // CALENDÁRIO
+        $('#data-input-select-form-agendamento').datepicker({
+            startDate: "-infinity",
+            clearBtn: true,
+            language: "pt-BR",
+            todayHighlight: true
+        });
+
+        // TELEFONE
+        jQuery("input.telefone-input-form-agendamento")
+            .mask("(99) 99999-9999")
+            .focusout(function (event) {  
+                var target, phone, element;  
+                target = (event.currentTarget) ? event.currentTarget : event.srcElement;  
+                phone = target.value.replace(/\D/g, '');
+                element = $(target);   
+            });
+    </script>
 
 {% endblock %}
