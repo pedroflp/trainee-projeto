@@ -30,20 +30,22 @@ class Index(View):
                                               'erro': 'Formato de data inválido. ex: 01/01/2020'})
                 
 
-            expressao = re.compile(r'\(\d{2}\)\d{4,5}-\d{4}\Z')
+            expressao = re.compile(r'\(\d{2}\) \d{4,5}-\d{4}\Z')
 
             if expressao.match(form.data['telefone']):
                 consulta = form.save(commit=False)
                 consulta.respondida = False
                 consulta.save()
 
+                return redirect('index')
+
             else:
                 return render(request, 'index.html', {'especialidades': especialidades,
                                               'form': form,
                                               'erro': 'Formato de telefone inválido. ex: (01)98765-4321 ou (01)8765-4321'})
 
-        return redirect('index')
-
+        return render(request, 'index.html',{'especialidades': especialidades,
+                                              'form': form})
 
 def especialidades (request):
     especialidades = Especialidade.objects.all()
