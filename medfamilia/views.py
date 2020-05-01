@@ -37,12 +37,15 @@ class Index(View):
                 consulta.respondida = False
                 consulta.save()
 
+                return redirect('confirmacao_consulta', nome=consulta.nome)
+
             else:
                 return render(request, 'index.html', {'especialidades': especialidades,
                                               'form': form,
                                               'erro': 'Formato de telefone inválido. ex: (01)98765-4321 ou (01)8765-4321'})
 
-        return redirect('index')
+        return render(request, 'index.html', {'especialidades': especialidades,
+                                              'form': form})
 
 
 def especialidades (request):
@@ -52,3 +55,7 @@ def especialidades (request):
 
 def especialidade_especifica (request):
     return render(request, 'especialidade_especifica.html')
+
+
+def confirmacao_consulta (request, nome):
+    return render (request, 'confirmacao_consulta.html', {'nome':nome})
