@@ -1,0 +1,257 @@
+/* CSS Configurações */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+}
+body h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+}
+body h3{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+}
+body span{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+}
+body p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;   
+}
+
+/* Agendar sua Consulta */
+.agendar-sua-consulta-container{
+    background: #1F4E62;
+}
+.agendar-sua-consulta-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* Fluxo de Processo */
+.fluxo-de-processo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 30px;
+    background: white;
+}
+.fluxo-de-processo-1,
+.fluxo-de-processo-2,
+.fluxo-de-processo-3
+{   
+    width: 80%;
+    display: flex;
+    opacity: 0.3;
+    cursor: default;
+    margin-bottom: 90px;
+    transition: 0.5s ease-in-out;
+}
+.fluxo-de-processo-4{
+    width: 80%;
+    display: flex;
+    opacity: 0.3;
+    cursor: default;
+    transition: 0.5s ease-in-out;
+
+}
+.fluxo-de-processo-1:hover,
+.fluxo-de-processo-2:hover,
+.fluxo-de-processo-3:hover,
+.fluxo-de-processo-4:hover
+{
+    opacity: 0.6;
+    cursor: pointer;
+}
+.fluxo-de-processo-1-imagem,
+.fluxo-de-processo-2-imagem,
+.fluxo-de-processo-3-imagem,
+.fluxo-de-processo-4-imagem
+{
+    display: flex;
+    align-items: center;
+    padding: 0px 0px;
+}
+.fluxo-de-processo-1-imagem img,
+.fluxo-de-processo-2-imagem img,
+.fluxo-de-processo-3-imagem img,
+.fluxo-de-processo-4-imagem img
+{
+    width: 150px;
+    padding: 20px 20px;
+    background: rgb(194, 227, 255);
+    border: 5px solid white;
+    border-radius: 50%;
+}
+.fluxo-de-processo-1-informacoes,
+.fluxo-de-processo-2-informacoes,
+.fluxo-de-processo-3-informacoes,
+.fluxo-de-processo-4-informacoes
+{
+    margin-left: 30px;
+}
+.fluxo-de-processo-1 h3,
+.fluxo-de-processo-2 h3,  
+.fluxo-de-processo-3 h3,  
+.fluxo-de-processo-4 h3   
+{
+    color: #275373;
+}
+.fluxo-de-processo-1 p,
+.fluxo-de-processo-2 p,  
+.fluxo-de-processo-3 p,  
+.fluxo-de-processo-4 p   
+{
+}
+.processo-ativo{
+    opacity: 1 !important;
+}
+
+/* Fluxo de Processo - Botões */
+.fluxo-de-processo-botoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.fluxo-de-processo-1-botao,
+.fluxo-de-processo-2-botao,
+.fluxo-de-processo-3-botao,
+.fluxo-de-processo-4-botao
+{
+    margin-left: -30px;
+}   
+.fluxo-de-processo-1-botao button,
+.fluxo-de-processo-2-botao button,
+.fluxo-de-processo-3-botao button,
+.fluxo-de-processo-4-botao button
+{
+    padding: 15px;
+    background: #D6F5FF;
+    border: 8px solid white;
+    border-radius: 50%;
+    outline: none;
+    opacity: 1;
+    transition: 0.4s ease-in-out;
+}
+.fluxo-de-processo-1-botao button:hover,
+.fluxo-de-processo-2-botao button:hover,
+.fluxo-de-processo-3-botao button:hover,
+.fluxo-de-processo-4-botao button:hover
+{
+    background: rgb(181, 225, 241);
+}
+.processo-ativo button{
+    background: #1F4E62 !important;
+}
+
+/* Formulário de Agendamento */
+.formulario-agendar-consulta{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.formulario-agendar-consulta h1{
+    color: white;
+    text-align: center;
+}
+.linha-abaixo-titulo{
+    border-bottom: 2px solid rgb(255, 255, 255);
+    width: 15%;
+    margin: auto;
+}
+.formulario-agendar-consulta form{
+    width: 50%;
+}
+.formulario-agendar-consulta h3{
+    color: white;
+}
+.formulario-agendar-consulta form input{
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: #1F4E62;
+    outline: none;
+}
+.formulario-agendar-consulta form input::placeholder{
+    color: #1F4E62;
+    font-weight: 600;
+}
+.data-select-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.data-input-select-form-agendamento{
+    width: 85% !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    padding: 20px 10px !important;
+}
+.formulario-agendar-consulta form select{
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Montserrat';
+    color: #1F4E62;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+}
+.formulario-agendar-consulta form select option{
+    font-weight: 600;
+    color: #1F4E62; 
+}
+.formulario-agendar-consulta form textarea{
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: #1F4E62; 
+    outline: none;
+    text-transform: capitalize;
+    resize: none;
+}
+.formulario-agendar-consulta form textarea::placeholder{
+    color: #1F4E62;
+    font-weight: 600;
+}
+.formulario-agendar-consulta form input[type = "submit"]{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 30px auto;
+    color: #0B182B;
+    background: #74BCFF;
+    border-radius: 30px;
+    transition: 0.4s ease-in-out;
+}
+.formulario-agendar-consulta form input[type = "submit"]:hover{
+    background: rgb(158, 205, 247);
+}
