@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+    <p>Consulta pré cadastrada</p>
+
+    <p>Olá {{nome}}!</p>
+
+    <form action="{% url 'index' %}">
+        <button >Voltar para início</button>
+    </form>
+
+
+{% endblock %}
