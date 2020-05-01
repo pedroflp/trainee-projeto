@@ -30,7 +30,7 @@ class Index(View):
                                               'erro': 'Formato de data inválido. ex: 01/01/2020'})
                 
 
-            expressao = re.compile(r'\(\d{2}\)\d{4,5}-\d{4}\Z')
+            expressao = re.compile(r'\(\d{2}\) \d{4,5}-\d{4}\Z')
 
             if expressao.match(form.data['telefone']):
                 consulta = form.save(commit=False)

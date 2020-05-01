@@ -43,9 +43,7 @@
         <label for="">email: </label> {{form.email}} <br>
         <label for="">telefone: </label> {{form.telefone}} <br>
         <label for="">especialidade: </label> {{form.especialidade}} <br>
-        <label for="">data: </label>
-                     <input type="text" class="form-control" id="exemplo" placeholder="Selecione a Data" min="1" max="31" required>
-                    {{form.data}} <br>
+        <label for="">data: </label> {{form.data}} <br>
         <label for="">turno: </label> {{form.turno}} <br>
         <label for="">informações adicionais: </label> {{form.info_adicionais}} <br>
 
@@ -61,10 +59,6 @@
             language: "pt-BR",
             todayHighlight: true
         });
-
-        $('#exemplo').change(()=> {
-            document.getElementById('id_data').value = document.getElementById('exemplo').value
-        })
     </script>
     {% endblock %}
 
