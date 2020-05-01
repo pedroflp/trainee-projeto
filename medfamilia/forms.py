@@ -25,8 +25,12 @@ class ConsultaForm (forms.ModelForm):
         self.fields['especialidade'].widget.attrs = {'id':"especialidade-select",
                                                      'class':"especialidade-select"}
 
-        self.fields['data'].widget.attrs = {'id':'id_data'}
-        self.fields['data'].widget = forms.HiddenInput()
+        self.fields['data'].widget.attrs = {'title':"Selecione uma data do calendário.",
+                                            'class':"data-input-select-form-agendamento form-control",
+                                            'id':"data-input-select-form-agendamento",
+                                            'placeholder':"Selecione a Data",
+                                            'min':"1", 'max':"31",
+                                            'maxlength':"10"}
 
         self.fields['turno'].widget.attrs = {'id':"turno-select",
                                               'class':"turno-select"}

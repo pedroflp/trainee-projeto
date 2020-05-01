@@ -100,7 +100,6 @@
                             <!-- Data -->
                             <div class="data-select-formulario-agendar-consulta input-group date">
                                 <h3>Data *</h3>
-                                <input type="text" title="Selecione uma data do calendário." class="data-input-select-form-agendamento form-control" id="data-input-select-form-agendamento" placeholder="Selecione a Data" min="1" max="31" maxlength="10" required>
                                 {{form.data}}
                             </div>
                             <!-- Turno -->
@@ -193,10 +192,6 @@
             language: "pt-BR",
             todayHighlight: true
         });
-
-        $('#data-input-select-form-agendamento').change(()=> {
-            document.getElementById('id_data').value = document.getElementById('data-input-select-form-agendamento').value
-        })
 
         // TELEFONE
         jQuery("input.telefone-input-form-agendamento")
