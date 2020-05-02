@@ -1,0 +1,198 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especialidade Específica</title>
+    <link rel="stylesheet" href="src/css/style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
+    <link rel="stylesheet" href="src/css/bootstrap-datepicker.css">
+</head>
+<body>
+    
+<section id="especialidade-especifica">
+    <div class="especialidade-especifica-container">
+        <div class="especialidade-especifica-content">
+            <div class="especialidade-especifica-card">
+                <h1>Acupuntura</h1>
+                <div class="especialidade-especifica-card-content">
+                    <div class="especialidade-especifica-card-informacao">
+                        <h3>Lorem:</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                        <h3>Ipsum:</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        
+                        <h3>Dolor:</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+
+                    <div class="especialidade-especifica-card-imagem">
+                        <img src="src/images/acupuntura.svg">
+                    </div>
+                </div>
+
+                <div class="especialidade-especifica-formulario-agendamento">
+                    <button id="agendar-consulta-formulario-botao">Agende sua Consulta</button>
+                </div>
+
+                <!-- Modal - Agendamento de Consulta -->
+                <div id="especialidade-modal-agendamento-consulta" class="especialidade-modal-agendamento-consulta">
+                    <!-- Modal - Conteúdo -->
+                    <div class="especialidade-modal-agendamento-consulta-content">
+                        <span class="close-modal-botao">&times;</span>
+
+                        <!-- Formulário -->
+                        <div class="formulario-agendar-consulta">
+                            <h2>Agende sua Consulta</h2>
+                            <div class="linha-abaixo-titulo"></div>
+                            <form action="" id="formulario-agendamento-consulta" class="formulario-agendamento-consulta">
+                                <div class="formulario-agendar-consulta-content">
+                                    <div class="inputs-formulario-agendar-consulta">
+                                        <!-- Nome -->
+                                        <div class="nome-input-formulario-agendar-consulta">
+                                            <h3>Nome *</h3>
+                                            <input type="text" id="nome-input-form-agendamento" class="nome-input-form-agendamento" placeholder="Digite seu Nome" required>
+                                        </div>
+                                        <!-- Email -->
+                                        <div class="email-input-formulario-agendar-consulta">
+                                            <h3>Email *</h3>
+                                            <input type="text" id="email-input-form-agendamento" class="email-input-form-agendamento" placeholder="Digite seu Email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                                        </div>
+
+                                        <!-- Especialidade -->
+                                        <div class="especialidade-select-formulario-agendar-consulta">
+                                            <h3>Especialidade *</h3>
+                                            <select id="especialidade-select" class="especialidade-select" required>
+                                                <option value="" class="valor-nulo">Selecione a Especialidade</option>
+                                                <option id="especialidade-acupuntura" value="Acupuntura">Acupuntura</option>
+                                                <option id="especialidade-angiologia" value="Angiologia">Angiologia</option>
+                                                <option id="especialidade-cardiologia" value="Cardiologia">Cardiologia</option>
+                                                <option id="especialidade-clínicageral" value="Clínica Geral">Clínica Geral</option>
+                                                <option id="especialidade-dermatologia" value="Dermatologia">Dermatologia</option>
+                                                <option id="especialidade-endocrinologia" value="Endocrinologia">Endocrinologia</option>
+                                                <option id="especialidade-fisioterapia" value="Fisioterapia">Fisioterapia</option>
+                                                <option id="especialidade-fonoaudiologia" value="Fonoaudiologia">Fonoaudiologia</option>
+                                                <option id="especialidade-gastroenterolo" value="Gastroenterologia">Gastroenterologia</option>
+                                                <option id="especialidade-geriatria" value="Geriatria">Geriatria</option>
+                                                <option id="especialidade-ginecologia" value="Ginecologia">Ginecologia</option>
+                                                <option id="especialidade-hematologia" value="Hematologia">Hematologia</option>
+                                                <option id="especialidade-mastologia" value="Mastologia">Mastologia</option>
+                                                <option id="especialidade-nefrologia" value="Nefrologia">Nefrologia</option>
+                                                <option id="especialidade-neurologia" value="Neurologia">Neurologia</option>
+                                                <option id="especialidade-nutrição" value="Nutrição">Nutrição</option>
+                                                <option id="especialidade-otorrinolaringologia" value="Otorrinolaringologia">Otorrinolaringologia</option>
+                                                <option id="especialidade-pediatria" value="Pediatria">Pediatria</option>
+                                                <option id="especialidade-pneumologia" value="Pneumologia">Pneumologia</option>
+                                                <option id="especialidade-proctologia" value="Proctologia">Proctologia</option>
+                                                <option id="especialidade-psicologia" value="Psicologia">Psicologia</option>
+                                                <option id="especialidade-psiquiatria" value="Psiquiatria">Psiquiatria</option>
+                                                <option id="especialidade-reumatologia" value="Reumatologia">Reumatologia</option>
+                                                <option id="especialidade-urologia" value="Urologia">Urologia</option>
+                                            </select>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                    <div class="selects-formulario-agendar-consulta">
+                                        <!-- Telefone -->
+                                        <div class="telefone-input-formulario-agendar-consulta">
+                                            <h3>Telefone *</h3>
+                                            <input type="tel" id="telefone-input-form-agendamento" class="telefone-input-form-agendamento" placeholder="Digite seu Telefone" minlength="10" maxlength="10" required>
+                                        </div>
+                                        <!-- Data -->
+                                        <div class="data-select-formulario-agendar-consulta input-group date">
+                                            <h3>Data *</h3>
+                                            <input type="text" title="Selecione uma data do calendário." class="data-input-select-form-agendamento form-control" id="data-input-select-form-agendamento" placeholder="Selecione a Data" min="1" max="31" maxlength="10" required>
+                                        </div>
+                                        <!-- Turno -->
+                                        <div class="turno-select-formulario-agendar-consulta">
+                                            <h3>Turno *</h3>
+                                            <select id="turno-select" class="turno-select" required>
+                                                <option value="" class="valor-nulo">Selecione o Turno</option>
+                                                <option id="turno-manhã" value="Manhã">Manhã</option>
+                                                <option id="turno-tarde" value="Tarde">Tarde</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Mensagem -->
+                                <div class="mensagem-input-formulario-agendar-consulta">
+                                    <h3>Informações adicionais</h3>
+                                    <textarea name="" id="mensagem-input-form-agendamento" class="mensagem-input-form-agendamento" cols="50" rows="5" placeholder="Digite sua mensagem"></textarea>   
+                                </div>
+                                <!-- Botão - Enviar Formulário -->
+                                <div class="enviar-solicitacao-formulario">
+                                    <input type="submit" id="botao-enviar-solicitacao-formulario" class="botao-enviar-solicitacao-formulario" value="Enviar Solicitação">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- // SCRIPT CODES -->
+<script src="src/js/jquery-3.4.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/src/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+
+<script src="src/js/bootstrap-datepicker.min.js"></script> 
+<script src="src/js/bootstrap-datepicker.pt-BR.min.js" charset="UTF-8"></script>
+
+<!-- Modal - Formulário Agendamento -->
+<script>
+    var modal = document.getElementById("especialidade-modal-agendamento-consulta");
+
+    var btn = document.getElementById("agendar-consulta-formulario-botao");
+
+    var span = document.getElementsByClassName("close-modal-botao")[0];
+
+    btn.onclick = function() {
+    modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+    modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    }
+</script>
+
+<script>
+    // CALENDÁRIO
+    $('#data-input-select-form-agendamento').datepicker({
+    startDate: "-infinity",
+    clearBtn: true,
+    orientation: "bottom left",
+    language: "pt-BR",
+    todayHighlight: true,
+    maxViewMode: 1
+    });
+
+    // TELEFONE
+    jQuery("input.telefone-input-form-agendamento")
+        .mask("(99) 99999-9999")
+        .focusout(function (event) {  
+            var target, phone, element;  
+            target = (event.currentTarget) ? event.currentTarget : event.srcElement;  
+            phone = target.value.replace(/\D/g, '');
+            element = $(target);   
+        });
+        
+</script>
+
+</body>
+</html>

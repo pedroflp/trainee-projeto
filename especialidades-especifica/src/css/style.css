@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+}
+body h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+}
+body h3{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+body span{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+body p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;   
+}
+::selection{
+    background: #F4DAEA;
+    color: black;
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 0px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(175, 175, 175); 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #CF6F80; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #A04454; 
+}
+/* Especialidade Específica */
+.especialidade-especifica-container{
+    width: 80%;
+    margin: 50px auto;
+}
+.especialidade-especifica-card{
+    border: 2px solid rgb(0, 0, 0);
+    padding: 0px 50px;
+}
+.especialidade-especifica-card-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.especialidade-especifica-card-informacao{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-bottom: 40px;
+}
+.especialidade-especifica-card h1{
+    text-align: center;
+    margin: -30px auto 30px;
+    color: black;
+    background: white;
+    width: 350px;
+}
+.especialidade-especifica-card p{
+    margin: 0px 0px 30px;
+    color: rgb(107, 107, 107);
+}
+.especialidade-especifica-card-imagem{
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+.especialidade-especifica-card-imagem img{
+    width: 80%;
+}
+.especialidade-especifica-formulario-agendamento button{
+    background: #CF6F80;
+    border: 8px solid white;
+    border-radius: 50px;
+    padding: 10px 50px;
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: -30px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.especialidade-especifica-formulario-agendamento button:hover{
+    background: rgb(189, 68, 90);
+    transform: scale(1.05);
+}
+
+/* Modal - Agendamento de Consulta */
+.especialidade-modal-agendamento-consulta{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+.especialidade-modal-agendamento-consulta-content{
+    background: #CF6F80;
+    margin: 50px auto;
+    border: none;
+    border-radius: 20px;
+    width: 60%;
+    box-shadow: 0px 0px 80px rgba(0,0,0,0.6);
+}
+.close-modal-botao{
+    float: right;
+    color: #CF6F80;
+    background: rgba(255, 255, 255, 0.6);
+    font-size: 40px;
+    padding: 0px 10px 0px 10px;
+    border-radius: 0px 20px 0px 20px;
+    transition: 0.3s ease-in-out;
+}
+.close-modal-botao:hover,
+.close-modal-botao:focus{
+    background: rgb(255, 255, 255);
+    padding: 0px 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal - Formulário de Agendamento */
+.formulario-agendar-consulta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.formulario-agendar-consulta h2{
+    color: white;
+    text-align: center;
+    background: none;
+    margin: 20px 0px 20px;
+}
+.linha-abaixo-titulo{
+    border-bottom: 2px solid rgb(255, 255, 255);
+    width: 15%;
+    margin: auto;
+}
+.formulario-agendar-consulta-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.inputs-formulario-agendar-consulta{
+    width: 70%;
+    margin-right: 20px;
+}
+.formulario-agendar-consulta form{
+    width: 60%;
+    margin: 20px auto;
+}
+.formulario-agendar-consulta h3{
+    color: white;
+}
+.formulario-agendar-consulta form input{
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: #A04454;
+    outline: none;
+}
+.formulario-agendar-consulta form input::placeholder{
+    color: rgb(194, 194, 194);
+    font-weight: 100;
+}
+.data-select-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.data-input-select-form-agendamento{
+    width: 100% !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    padding: 20px 10px !important;
+}
+.formulario-agendar-consulta form select{
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: #A04454;  
+    cursor: pointer;
+    outline: none;
+}
+.formulario-agendar-consulta [class^="valor-nulo"]{
+    font-weight: 100;
+    color: rgb(194, 194, 194);   
+}
+.formulario-agendar-consulta form select option{
+    font-weight: 600;
+    color: #A04454; 
+}
+.formulario-agendar-consulta form textarea{
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: #A04454; 
+    outline: none;
+    resize: none;
+}
+.formulario-agendar-consulta form textarea::placeholder{
+    color: rgb(194, 194, 194);
+    font-weight: 100;
+}
+.formulario-agendar-consulta form input[type = "submit"]{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 40px auto 20px;
+    color: #A04454;
+    background: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.formulario-agendar-consulta form input[type = "submit"]:hover{
+    background: rgb(230, 230, 230);
+}
