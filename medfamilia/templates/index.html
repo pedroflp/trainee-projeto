@@ -8,6 +8,17 @@
 
 {% block body %}
 
+    <h1>Quem Somos</h1>
+
+    <h2>Missão</h2>
+    <p>{{quemSomos.missao}}</p>
+
+    <h2>Visão</h2>
+    <p>{{quemSomos.visao}}</p>
+
+    <h2>Valores</h2>
+    <p>{{quemSomos.valores}}</p>
+
     <p>carrosel</p>
     {% for especialidade in especialidades %}
         <p>{{especialidade.nome}}</p>

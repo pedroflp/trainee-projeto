@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from datetime import datetime
 import re
-from .models import Especialidade
+
+from .models import Especialidade, QuemSomos
 from .forms import ConsultaForm
 
 # Create your views here.
@@ -10,13 +11,16 @@ from .forms import ConsultaForm
 class Index(View):
     #passa o formulário de consulta para a pagina inicial
     def get(self, request):
+        quemSomos = QuemSomos.objects.latest('pk')
         especialidades = Especialidade.objects.all()
         form = ConsultaForm()
         return render(request, 'index.html', {'especialidades': especialidades,
-                                              'form': form})
+                                              'form': form,
+                                              'quemSomos': quemSomos})
 
     #realiza o cadastro da consulta no banco de dado se tudo estiver correto
     def post(self, request):
+        quemSomos = QuemSomos.objects.latest('pk')
         form = ConsultaForm(request.POST)
         especialidades = Especialidade.objects.all()
         fragmento = "#form"
@@ -28,6 +32,7 @@ class Index(View):
             except:
                 return render(request, 'index.html', {'especialidades': especialidades,
                                               'form': form,
+                                              'quemSomos': quemSomos,
                                               'erro': 'Formato de data inválido. ex: 01/01/2020',
                                               'fragmento': fragmento})
                 
@@ -45,11 +50,13 @@ class Index(View):
             else:
                 return render(request, 'index.html', {'especialidades': especialidades,
                                               'form': form,
+                                              'quemSomos': quemSomos,
                                               'erro': 'Formato de telefone inválido. ex: (01) 98765-4321 ou (01) 8765-4321',
                                               'fragmento':fragmento})
 
         return render(request, 'index.html', {'especialidades': especialidades,
                                               'form': form,
+                                              'quemSomos': quemSomos,
                                               'fragmento':fragmento})
 
 
@@ -109,3 +116,4 @@ class especialidade_especifica (View):
 
 def confirmacao_consulta (request, nome):
     return render (request, 'confirmacao_consulta.html', {'nome':nome})
+

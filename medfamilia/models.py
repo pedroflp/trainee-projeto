@@ -36,3 +36,13 @@ class Consulta (models.Model):
 
     class Meta:
         ordering = ['respondida', 'id']
+
+
+class QuemSomos (models.Model):
+    missao = models.TextField(verbose_name='Missão')
+    visao = models.TextField(verbose_name='Visão')
+    valores = models.TextField()
+
+    class Meta:
+        verbose_name = 'Quem Somos'
+        verbose_name_plural = 'Quem Somos'
