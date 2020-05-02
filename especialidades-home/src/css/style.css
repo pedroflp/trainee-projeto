@@ -116,12 +116,15 @@ body p{
     font-weight: 400;
 }
 .carousel-especialidade-card button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 80%;
     background: #CF6F80;
     border: 8px solid #F4DAEA;
     text-align: center;
     border-radius: 30px;
-    margin: 0% 10% -9%;
+    margin: 0px auto -30px;
     padding: 10px 20px;
     color: white;
     font-family: 'Montserrat', sans-serif;
@@ -131,7 +134,7 @@ body p{
     transition: 0.3s ease-in-out;
 }
 .carousel-especialidade-card button:hover{
-    background: rgb(165, 86, 99);
+    background: rgb(231, 82, 107);
     transform: scale(1.05);
 }
 .botao-ver-todas-especialidades{
