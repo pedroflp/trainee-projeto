@@ -19,6 +19,7 @@ class Index(View):
     def post(self, request):
         form = ConsultaForm(request.POST)
         especialidades = Especialidade.objects.all()
+        fragmento = "#form"
 
         if form.is_valid():
             try:
@@ -27,12 +28,14 @@ class Index(View):
             except:
                 return render(request, 'index.html', {'especialidades': especialidades,
                                               'form': form,
-                                              'erro': 'Formato de data inválido. ex: 01/01/2020'})
+                                              'erro': 'Formato de data inválido. ex: 01/01/2020',
+                                              'fragmento': fragmento})
                 
 
-            expressao = re.compile(r'\(\d{2}\) \d{4,5}-\d{4}\Z')
+            expressaoSemEspaco = re.compile(r'\(\d{2}\)\d{4,5}-\d{4}\Z')
+            expressaoComEspaco = re.compile(r'\(\d{2}\) \d{4,5}-\d{4}\Z')
 
-            if expressao.match(form.data['telefone']):
+            if expressaoSemEspaco.match(form.data['telefone']) or expressaoComEspaco.match(form.data['telefone']):
                 consulta = form.save(commit=False)
                 consulta.respondida = False
                 consulta.save()
@@ -42,10 +45,12 @@ class Index(View):
             else:
                 return render(request, 'index.html', {'especialidades': especialidades,
                                               'form': form,
-                                              'erro': 'Formato de telefone inválido. ex: (01)98765-4321 ou (01)8765-4321'})
+                                              'erro': 'Formato de telefone inválido. ex: (01) 98765-4321 ou (01) 8765-4321',
+                                              'fragmento':fragmento})
 
         return render(request, 'index.html', {'especialidades': especialidades,
-                                              'form': form})
+                                              'form': form,
+                                              'fragmento':fragmento})
 
 
 def especialidades (request):

@@ -10,14 +10,14 @@
 
     <p>carrosel</p>
     {% for especialidade in especialidades %}
-        <p>{{especialidade.titulo}}</p>
+        <p>{{especialidade.nome}}</p>
         <p>{{especialidade.descricao}}</p>
-        <img src="{{especialidade.imagem.url}}" alt="imagem - {{especialidade.titulo}}">
+        <img src="{{especialidade.imagem.url}}" alt="imagem - {{especialidade.nome}}">
     {% endfor %}
 
     <h2>Agende sua consulta</h2>
 
-    <form action="{% url 'index' %}" method="POST">
+    <form id="form" action="{% url 'index' %}" method="POST">
         {% csrf_token %}
 
         {% if erro %}
@@ -45,8 +45,9 @@
         <button>Enviar solicitação</button>
     </form>
 
+{% endblock %}
 
-    {% block script %}
+{% block script %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="{% static 'js/calendario/js/bootstrap-datepicker.min.js' %}"></script> 
@@ -60,6 +61,12 @@
             todayHighlight: true
         });
     </script>
-    {% endblock %}
+
+    {% if fragmento %}
+        <script>
+            window.location = "{{fragmento}}"
+        </script>
+    {% endif %}
+
 
 {% endblock %}

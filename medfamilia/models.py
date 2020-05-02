@@ -3,15 +3,15 @@ from django.db import models
 # Create your models here.
 
 class Especialidade (models.Model):
-    titulo = models.CharField(max_length=100)
-    descricao = models.TextField()
+    nome = models.CharField(max_length=100, verbose_name='Nome')
+    descricao = models.TextField(verbose_name='Descrição')
     imagem = models.ImageField(upload_to='especialidades')
 
     def __str__ (self):
-        return self.titulo
+        return self.nome
 
     class Meta:
-        ordering = ['titulo']
+        ordering = ['nome']
 
 
 class Consulta (models.Model):
