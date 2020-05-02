@@ -3,6 +3,8 @@
 
 {% block body %}
 
-    <p>especialidade_especifica</p>
+    <h1>{{especialidade.nome}}</h1>
+    <p>{{especialidade.descricao}}</p>
+    <img src="{{especialidade.imagem.url}}" alt="{{especialidade.nome}}">
 
 {% endblock %}

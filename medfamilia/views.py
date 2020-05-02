@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from datetime import datetime
 import re
@@ -58,8 +58,9 @@ def especialidades (request):
     return render(request, 'especialidades.html', {'especialidades': especialidades})
 
 
-def especialidade_especifica (request):
-    return render(request, 'especialidade_especifica.html')
+def especialidade_especifica (request, id):
+    especialidade = get_object_or_404(Especialidade, pk=id)
+    return render(request, 'especialidade_especifica.html', {'especialidade': especialidade})
 
 
 def confirmacao_consulta (request, nome):
