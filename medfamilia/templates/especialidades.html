@@ -3,6 +3,7 @@
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/especialidades.css' %}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
@@ -12,11 +13,11 @@
                 <h1>Especialidades</h1>
                 <div class="linha-abaixo-titulo"></div>
                 <div class="especialidades-gerais-content">
-                    <div class="especialidades-gerais-cards">
+                    <div class="especialidades-gerais-cards" data-aos="fade-up" data-aos-duration="1000">
                         {% for especialidade in especialidades %}
                             <div class="especialidades-gerais-card">
                                 <img src="{{especialidade.imagem.url}}" alt="imagem - {{especialidade.nome}}">
-                                <h3>{{especialidade.nome}}</h3>
+                                <h3 title="{{especialidade.nome}}">{{especialidade.nome | truncatechars_html:20}}</h3>
                                 <p>{{especialidade.descricao | truncatechars_html:200}}</p>
                                 <form action="{% url 'especialidade_especifica' especialidade.id %}">
                                     <button class="button-saibamais-carousel-card">Saiba Mais</button>
@@ -28,4 +29,9 @@
             </div>
         </div>
     </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 {% endblock %}
