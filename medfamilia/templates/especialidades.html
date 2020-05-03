@@ -1,14 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/especialidades.css' %}">
+{% endblock %}
+
 {% block body %}
-
-    <p>especialidades</p>
-    
-    {% for especialidade in especialidades %}
-        <p>{{especialidade.nome}}</p>
-        <p>{{especialidade.descricao}}</p>
-        <img src="{{especialidade.imagem.url}}" alt="imagem - {{especialidade.nome}}">
-    {% endfor %}
-
+    <section id="especialidades-gerais">
+        <div class="especialidades-gerais-container">
+            <div class="especialidades-gerais-content">
+                <h1>Especialidades</h1>
+                <div class="linha-abaixo-titulo"></div>
+                <div class="especialidades-gerais-content">
+                    <div class="especialidades-gerais-cards">
+                        {% for especialidade in especialidades %}
+                            <div class="especialidades-gerais-card">
+                                <img src="{{especialidade.imagem.url}}" alt="imagem - {{especialidade.nome}}">
+                                <h3>{{especialidade.nome}}</h3>
+                                <p>{{especialidade.descricao | truncatechars_html:200}}</p>
+                                <form action="{% url 'especialidade_especifica' especialidade.id %}">
+                                    <button class="button-saibamais-carousel-card">Saiba Mais</button>
+                                </form>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

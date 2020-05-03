@@ -5,16 +5,26 @@
  * Improvements by Andrew Rowls
  * Licensed under the Apache License v2.0 (http://www.apache.org/licenses/LICENSE-2.0)
  */
+
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+ *{
+   font-family: 'Montserrat';
+ }
+
 .form-control{
   outline: none;
   box-shadow: none!important;
 }
 .datepicker {
-  padding: 10px 20px;
+  padding: 20px 20px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
   direction: ltr;
+  transition: 0.4s ease-in-out;
 }
 .datepicker-inline {
   width: 220px;
@@ -69,7 +79,7 @@
 .datepicker-dropdown.datepicker-orient-top:before {
   bottom: -7px;
   border-bottom: 0;
-  border-top: 7px solid #999;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .datepicker-dropdown.datepicker-orient-top:after {
   bottom: -6px;
@@ -88,14 +98,17 @@
 .datepicker td,
 .datepicker th {
   text-align: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 5px;
-  border: none;
+  width: 30px;
+  height: 30px;
+  font-weight: 600;
+  border: 1px solid rgb(240, 240, 240);
 }
 .table-striped .datepicker table tr td,
 .table-striped .datepicker table tr th {
   background-color: transparent;
+}
+.datepicker table tr td.day{
+  padding: 10px 10px;
 }
 .datepicker table tr td.day:hover,
 .datepicker table tr td.day.focused {
@@ -104,13 +117,15 @@
 }
 .datepicker table tr td.old,
 .datepicker table tr td.new {
-  color: rgb(179, 179, 179);
+  color: rgb(150, 150, 150);
+  font-weight: 600;
 }
 .datepicker table tr td.disabled,
 .datepicker table tr td.disabled:hover {
   background: none;
   color: rgb(219, 219, 219);
   cursor: not-allowed;
+  font-weight: 100;
 }
 .datepicker table tr td.highlighted {
   background: #d9edf7;
@@ -120,13 +135,12 @@
 .datepicker table tr td.today:hover,
 .datepicker table tr td.today.disabled,
 .datepicker table tr td.today.disabled:hover {
-  background-color: #fdddf1;
+  background-color: #ffeaf7;
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdd49a', endColorstr='#fdf59a', GradientType=0);
-  border-color: #fdf59a #fdf59a #fbed50;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   color: rgb(0, 0, 0);
+  font-weight: 600;
 }
 
 .datepicker table tr td.today.active:hover {
@@ -197,7 +211,7 @@
 .datepicker table tr td.active:hover,
 .datepicker table tr td.active.disabled,
 .datepicker table tr td.active.disabled:hover {
-  background-color: #102a5f;
+  background-color: #1F4E62;
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#08c', endColorstr='#0044cc', GradientType=0);
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
@@ -225,7 +239,7 @@
 .datepicker table tr td.active:hover[disabled],
 .datepicker table tr td.active.disabled[disabled],
 .datepicker table tr td.active.disabled:hover[disabled] {
-  background-color: #102a5f;
+  background-color: #1F4E62;
 }
 .datepicker table tr td.active:active,
 .datepicker table tr td.active:hover:active,
@@ -235,13 +249,15 @@
 .datepicker table tr td.active:hover.active,
 .datepicker table tr td.active.disabled.active,
 .datepicker table tr td.active.disabled:hover.active {
-  background-color: #102a5f \9;
+  background-color: #1F4E62 \9;
 }
 .datepicker table tr td span {
   display: block;
   width: 23%;
   height: 54px;
   line-height: 54px;
+  font-size: 10px;
+  font-weight: 600;
   float: left;
   margin: 1%;
   cursor: pointer;
@@ -257,13 +273,14 @@
 .datepicker table tr td span.disabled:hover {
   background: none;
   color: #999;
-  cursor: default;
+  font-weight: 100;
+  cursor: not-allowed;
 }
 .datepicker table tr td span.active,
 .datepicker table tr td span.active:hover,
 .datepicker table tr td span.active.disabled,
 .datepicker table tr td span.active.disabled:hover {
-  background-color: #102a5f;
+  background-color: #1F4E62;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#08c', endColorstr='#0044cc', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   color: #fff;
@@ -289,7 +306,7 @@
 .datepicker table tr td span.active:hover[disabled],
 .datepicker table tr td span.active.disabled[disabled],
 .datepicker table tr td span.active.disabled:hover[disabled] {
-  background-color: #102a5f;
+  background-color: #1F4E62;
 }
 .datepicker table tr td span.active:active,
 .datepicker table tr td span.active:hover:active,
@@ -299,7 +316,7 @@
 .datepicker table tr td span.active:hover.active,
 .datepicker table tr td span.active.disabled.active,
 .datepicker table tr td span.active.disabled:hover.active {
-  background-color: #102a5f \9;
+  background-color: #1F4E62 \9;
 }
 .datepicker table tr td span.old,
 .datepicker table tr td span.new {

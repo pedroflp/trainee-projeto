@@ -3,12 +3,43 @@
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/carrossel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
     <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
 {% endblock %}
 
 
 {% block body %}
+    <section id="especialidades">
+        <div class="especialidades-container">
+            <h1>Especialidades</h1>
+            <div class="linha-abaixo-titulo"></div>
+            <div class="carousel-especialidades-content">
+                <div class="carousel-especialidades">
+                    {% for especialidade in especialidades %}
+                        <div class="carousel-especialidade-card">
+                            <img src="{{especialidade.imagem.url}}" alt="imagem - {{especialidade.nome}}">
+                            <h3>{{especialidade.nome}}</h3>
+                            <p>{{especialidade.descricao | truncatechars_html:150}}</p>
+                            <form action="{% url 'especialidade_especifica' especialidade.id %}">
+                                <button class="button-saibamais-carousel-card">Saiba Mais</button>
+                            </form>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="botao-todas-especialidades">
+                <form action="{% url 'especialidades' %}">
+                    <button class="botao-ver-todas-especialidades">Ver todas as Especialidades</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
     <section id="agendar-sua-consulta">
         <div class="agendar-sua-consulta-container">
             <div class="agendar-sua-consulta-content">
@@ -135,13 +166,6 @@
     <h2>Valores</h2>
     <p>{{quemSomos.valores}}</p>
 
-    <p>carrosel</p>
-    {% for especialidade in especialidades %}
-        <p>{{especialidade.nome}}</p>
-        <p>{{especialidade.descricao}}</p>
-        <img src="{{especialidade.imagem.url}}" alt="imagem - {{especialidade.nome}}">
-    {% endfor %}
-
 {% endblock %}
 
 
@@ -155,6 +179,7 @@
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 
+    <script type="text/javascript" src="slick/slick.min.js"></script>
     <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script> 
     <script src="{% static '/js/bootstrap-datepicker.pt-BR.min.js' %}" charset="UTF-8"></script>
 
@@ -201,7 +226,8 @@
             startDate: "-infinity",
             clearBtn: true,
             language: "pt-BR",
-            todayHighlight: true
+            todayHighlight: true,
+            maxViewMode: 1
         });
 
         // TELEFONE
@@ -213,6 +239,43 @@
                 phone = target.value.replace(/\D/g, '');
                 element = $(target);   
             });
+    </script>
+
+    <!--Carrossel-->
+    <script>
+        $(document).ready(function(){
+            $('.carousel-especialidades').slick({
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                speed: 1000,
+                arrows: true,
+                dots: false,
+                pauseOnHover: true,
+                responsive: [{
+                    breakpoint: 1300,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 800,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    },
+                }],
+            });
+        });
     </script>
 
     {% if fragmento %}
