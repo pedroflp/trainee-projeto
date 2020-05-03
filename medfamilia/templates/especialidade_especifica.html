@@ -1,8 +1,67 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block css %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="{% static 'js/calendario/css/bootstrap-datepicker.css' %}" rel="stylesheet"/>
+{% endblock %}
+
 {% block body %}
 
-    <p>especialidade_especifica</p>
+    <h1>{{especialidade.nome}}</h1>
+    <p>{{especialidade.descricao}}</p>
+    <img src="{{especialidade.imagem.url}}" alt="{{especialidade.nome}}">
+
+    <h2>Agende sua consulta</h2>
+    <form id="form" action="{% url 'especialidade_especifica' especialidade.id %}" method="POST">
+        {% csrf_token %}
+
+        {% if erro %}
+            {{erro}}
+            <br><br>
+        {% endif %}
+
+        {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <strong>{{ field.label }}: {{error|escape }}</strong>
+                {% endfor %}
+            {% endfor %}
+            <br><br>
+        {% endif %}
+
+        <label for="">Nome: </label> {{form.nome}} <br>
+        <label for="">email: </label> {{form.email}} <br>
+        <label for="">telefone: </label> {{form.telefone}} <br>
+        <label for="">especialidade: </label> {{form.especialidade}} <br>
+        <label for="">data: </label> {{form.data}} <br>
+        <label for="">turno: </label> {{form.turno}} <br>
+        <label for="">informações adicionais: </label> {{form.info_adicionais}} <br>
+
+        <button>Enviar solicitação</button>
+    </form>
+
+{% endblock %}
+
+{% block script %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/calendario/js/bootstrap-datepicker.min.js' %}"></script> 
+    <script src="{% static 'js/calendario/js/bootstrap-datepicker.pt-BR.min.js' %}" charset="UTF-8"></script>
+
+    <script type="text/javascript">
+        $('#exemplo').datepicker({
+            startDate: "-infinity",
+            clearBtn: true,
+            language: "pt-BR",
+            todayHighlight: true
+        });
+    </script>
+
+    {% if fragmento %}
+        <script>
+            window.location = "{{fragmento}}"
+        </script>
+    {% endif %}
 
 {% endblock %}

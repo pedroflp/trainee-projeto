@@ -6,9 +6,9 @@
     <p>especialidades</p>
     
     {% for especialidade in especialidades %}
-        <p>{{especialidade.titulo}}</p>
+        <p>{{especialidade.nome}}</p>
         <p>{{especialidade.descricao}}</p>
-        <img src="{{especialidade.imagem.url}}" alt="imagem - {{especialidade.titulo}}">
+        <img src="{{especialidade.imagem.url}}" alt="imagem - {{especialidade.nome}}">
     {% endfor %}
 
 {% endblock %}
