@@ -11,7 +11,11 @@ from .forms import ConsultaForm
 class Index(View):
     #passa o formulário de consulta para a pagina inicial
     def get(self, request):
-        quemSomos = QuemSomos.objects.latest('pk')
+        try:
+            quemSomos = QuemSomos.objects.latest('pk')
+        except QuemSomos.DoesNotExist:
+            quemSomos = None
+
         especialidades = Especialidade.objects.all()
         form = ConsultaForm()
         return render(request, 'index.html', {'especialidades': especialidades,
@@ -20,7 +24,11 @@ class Index(View):
 
     #realiza o cadastro da consulta no banco de dado se tudo estiver correto
     def post(self, request):
-        quemSomos = QuemSomos.objects.latest('pk')
+        try:
+            quemSomos = QuemSomos.objects.latest('pk')
+        except QuemSomos.DoesNotExist:
+            quemSomos = None
+            
         form = ConsultaForm(request.POST)
         especialidades = Especialidade.objects.all()
         fragmento = "#form"
