@@ -8,7 +8,7 @@
 
 {% block body %}
 
-    <h1>Quem Somos</h1>
+    <h1 id="quemSomos">Quem Somos</h1>
 
     <h2>Missão</h2>
     <p>{{quemSomos.missao}}</p>
@@ -19,14 +19,14 @@
     <h2>Valores</h2>
     <p>{{quemSomos.valores}}</p>
 
-    <p>carrosel</p>
+    <p id="especialidades">carrosel</p>
     {% for especialidade in especialidades %}
         <p>{{especialidade.nome}}</p>
         <p>{{especialidade.descricao}}</p>
         <img src="{{especialidade.imagem.url}}" alt="imagem - {{especialidade.nome}}">
     {% endfor %}
 
-    <h2>Agende sua consulta</h2>
+    <h2 id="marcarConsulta">Agende sua consulta</h2>
 
     <form id="form" action="{% url 'index' %}" method="POST">
         {% csrf_token %}

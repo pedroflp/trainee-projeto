@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
+from django.http import HttpResponse
 from datetime import datetime
 import re
 
@@ -7,6 +8,10 @@ from .models import Especialidade, QuemSomos
 from .forms import ConsultaForm
 
 # Create your views here.
+
+def teste (request):
+
+    return HttpResponse(request.POST.get('fragmento'))
 
 class Index(View):
     #passa o formulário de consulta para a pagina inicial
@@ -28,6 +33,16 @@ class Index(View):
             quemSomos = QuemSomos.objects.latest('pk')
         except QuemSomos.DoesNotExist:
             quemSomos = None
+
+        if request.POST.get('fragmento'):
+            fragmento = "#" + request.POST.get('fragmento')
+
+            especialidades = Especialidade.objects.all()
+            form = ConsultaForm()
+            return render(request, 'index.html', {'especialidades': especialidades,
+                                                'form': form,
+                                                'quemSomos': quemSomos,
+                                                'fragmento': fragmento})
             
         form = ConsultaForm(request.POST)
         especialidades = Especialidade.objects.all()
@@ -66,6 +81,42 @@ class Index(View):
                                               'form': form,
                                               'quemSomos': quemSomos,
                                               'fragmento':fragmento})
+                                            
+
+def cadastro_consulta (form):
+    if form.is_valid():
+        try:
+            datetime.strptime(form.data['data'], "%d/%m/%Y")
+
+        except:
+            return render(request, 'index.html', {'especialidades': especialidades,
+                                            'form': form,
+                                            'quemSomos': quemSomos,
+                                            'erro': 'Formato de data inválido. ex: 01/01/2020',
+                                            'fragmento': fragmento})
+            
+
+        expressaoSemEspaco = re.compile(r'\(\d{2}\)\d{4,5}-\d{4}\Z')
+        expressaoComEspaco = re.compile(r'\(\d{2}\) \d{4,5}-\d{4}\Z')
+
+        if expressaoSemEspaco.match(form.data['telefone']) or expressaoComEspaco.match(form.data['telefone']):
+            consulta = form.save(commit=False)
+            consulta.respondida = False
+            consulta.save()
+
+            return redirect('confirmacao_consulta', nome=consulta.nome)
+
+        else:
+            return render(request, 'index.html', {'especialidades': especialidades,
+                                            'form': form,
+                                            'quemSomos': quemSomos,
+                                            'erro': 'Formato de telefone inválido. ex: (01) 98765-4321 ou (01) 8765-4321',
+                                            'fragmento':fragmento})
+
+    return render(request, 'index.html', {'especialidades': especialidades,
+                                            'form': form,
+                                            'quemSomos': quemSomos,
+                                            'fragmento':fragmento})
 
 
 def especialidades (request):

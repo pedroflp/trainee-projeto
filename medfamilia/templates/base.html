@@ -13,7 +13,40 @@
 <body>
 
     <nav>
-        aqui tem a navbar
+        {% if request.path == '/' %}
+            <a href="#home">Home</a>
+            <a href="#quemsomos">Quem Somos</a>
+            <a href="#especialidades">Especialidades</a>
+            <a href="#marcarConsulta">Marcar Consulta</a>
+            <a href="#contato">Contato</a>
+
+        {% else %}
+            <form action="{% url 'index' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="fragmento" value="Home">
+                <button>Home</button>
+            </form>
+            <form action="{% url 'index' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="fragmento" value="quemSomos">
+                <button>Quem Somos</button>
+            </form>
+            <form action="{% url 'index' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="fragmento" value="especialidades">
+                <button>Especialidades</button>
+            </form>
+            <form action="{% url 'index' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="fragmento" value="marcarConsulta">
+                <button>Marcar Consulta</button>
+            </form>
+            <form action="{% url 'index' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="fragmento" value="contato">
+                <button>Contato</button>
+            </form>
+        {% endif %}
     </nav>
 
     {% block body %}
