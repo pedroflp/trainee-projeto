@@ -108,11 +108,21 @@ body p{
 }
 @media (max-width: 1000px){
     .quem-somos-container{
-        width: 80%;
+        width: 100%;
+        padding: 10px 0px;
     }
     .quem-somos-card{
-        width: 80%;
+        width: 100%;
         margin: 50px auto;
+    }
+    .linha-abaixo-titulo{
+        width: 30%;
+    }
+    .quem-somos-card{
+        margin: 0px 0px 50px;
+    }
+    .quem-somos-card p{
+        width: 95%;
     }
     .missao{
         border: none;
