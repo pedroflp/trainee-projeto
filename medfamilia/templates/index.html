@@ -8,13 +8,12 @@
     <link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 {% endblock %}
 
 
 {% block body %}
     <section id="especialidades">
-        <div class="especialidades-container animated fadeInUp">
+        <div class="especialidades-container">
             <h1>Especialidades</h1>
             <div class="linha-abaixo-titulo"></div>
             <div class="carousel-especialidades-content">
@@ -47,7 +46,7 @@
                 <!-- Fluxo de Processo -->
                 <div class="fluxo-de-processo">
                     <!-- Processo 1 -->
-                    <div class="processos animated fadeInLeft">
+                    <div class="processos">
                         <div id="fluxo-de-processo-1" class="fluxo-de-processo-1 processo-ativo">
                             <div class="fluxo-de-processo-1-imagem"><img src="{% static '/imagens/fluxo-de-processo/calendario.svg' %}"></div>
                             <div class="fluxo-de-processo-1-informacoes">
@@ -91,7 +90,7 @@
                 </div>
 
                 <!-- Formulário de Consulta -->
-                <div class="formulario-agendar-consulta animated fadeInRight">
+                <div class="formulario-agendar-consulta">
                     <h1>Agende sua Consulta</h1>
                     <form action="{% url 'index' %}" method="POST" id="formulario-agendamento-consulta" class="formulario-agendamento-consulta">
                         {% csrf_token %}
