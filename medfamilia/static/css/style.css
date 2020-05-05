@@ -191,6 +191,9 @@ body p{
     color: #1F4E62;
     font-weight: 600;
 }
+.data-select-formulario-agendar-consulta{
+    width: 50%;
+}
 .data-select-container{
     display: flex;
     flex-direction: row;
