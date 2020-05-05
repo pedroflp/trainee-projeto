@@ -39,6 +39,7 @@ body p{
 /* Especialidades */
 #especialidades{
     background: #F4DAEA;
+    overflow: hidden;
 }
 .especialidades-container{
     width: 90%;

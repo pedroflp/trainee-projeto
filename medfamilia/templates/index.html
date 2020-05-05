@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="{% static 'css/slick.css' %}">
     <link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">	
     <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 {% endblock %}
 
 
 {% block body %}
     <section id="especialidades">
-        <div class="especialidades-container">
+        <div class="especialidades-container animated fadeInUp">
             <h1>Especialidades</h1>
             <div class="linha-abaixo-titulo"></div>
             <div class="carousel-especialidades-content">
-                <div class="carousel-especialidades" data-aos="fade-up" data-aos-duration="1000">
+                <div class="carousel-especialidades">
                     {% for especialidade in especialidades %}
                         <div class="carousel-especialidade-card">
                             <img src="{{especialidade.imagem.url}}" alt="imagem - {{especialidade.nome}}">
@@ -32,7 +32,7 @@
                 </div>
             </div>
 
-            <div class="botao-todas-especialidades" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="botao-todas-especialidades">
                 <form action="{% url 'especialidades' %}">
                     <button class="botao-ver-todas-especialidades">Ver todas as Especialidades</button>
                 </form>
@@ -45,37 +45,39 @@
         <div class="agendar-sua-consulta-container">
             <div class="agendar-sua-consulta-content">
                 <!-- Fluxo de Processo -->
-                <div class="fluxo-de-processo" data-aos="fade-right" data-aos-duration="1000">
+                <div class="fluxo-de-processo">
                     <!-- Processo 1 -->
-                    <div id="fluxo-de-processo-1" class="fluxo-de-processo-1 processo-ativo">
-                        <div class="fluxo-de-processo-1-imagem"><img src="{% static '/imagens/fluxo-de-processo/calendario.svg' %}"></div>
-                        <div class="fluxo-de-processo-1-informacoes">
-                            <h3 class="fluxo-de-processo-1-titulo">Solicite sua Consulta</h3>
-                            <p class="fluxo-de-processo-1-paragrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utlabore etdolore magna aliqua.</p>
+                    <div class="processos animated fadeInLeft">
+                        <div id="fluxo-de-processo-1" class="fluxo-de-processo-1 processo-ativo">
+                            <div class="fluxo-de-processo-1-imagem"><img src="{% static '/imagens/fluxo-de-processo/calendario.svg' %}"></div>
+                            <div class="fluxo-de-processo-1-informacoes">
+                                <h3 class="fluxo-de-processo-1-titulo">Solicite sua Consulta</h3>
+                                <p class="fluxo-de-processo-1-paragrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utlabore etdolore magna aliqua.</p>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Processo 2 -->
-                    <div id="fluxo-de-processo-2" class="fluxo-de-processo-2">
-                        <div class="fluxo-de-processo-2-imagem"><img src="{% static '/imagens/fluxo-de-processo/enfermeira.svg' %}"></div>
-                        <div class="fluxo-de-processo-2-informacoes">
-                            <h3 class="fluxo-de-processo-2-titulo">Triagem</h3>
-                            <p class="fluxo-de-processo-2-paragrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utlabore etdolore magna aliqua.</p>
+                        <!-- Processo 2 -->
+                        <div id="fluxo-de-processo-2" class="fluxo-de-processo-2">
+                            <div class="fluxo-de-processo-2-imagem"><img src="{% static '/imagens/fluxo-de-processo/enfermeira.svg' %}"></div>
+                            <div class="fluxo-de-processo-2-informacoes">
+                                <h3 class="fluxo-de-processo-2-titulo">Triagem</h3>
+                                <p class="fluxo-de-processo-2-paragrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utlabore etdolore magna aliqua.</p>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Processo 3 -->
-                    <div id="fluxo-de-processo-3" class="fluxo-de-processo-3">
-                        <div class="fluxo-de-processo-3-imagem"><img src="{% static '/imagens/fluxo-de-processo/estetoscopio.svg' %}"></div>
-                        <div class="fluxo-de-processo-3-informacoes">
-                            <h3 class="fluxo-de-processo-3-titulo">Consulta</h3>
-                            <p class="fluxo-de-processo-3-paragrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utlabore etdolore magna aliqua.</p>
+                        <!-- Processo 3 -->
+                        <div id="fluxo-de-processo-3" class="fluxo-de-processo-3">
+                            <div class="fluxo-de-processo-3-imagem"><img src="{% static '/imagens/fluxo-de-processo/estetoscopio.svg' %}"></div>
+                            <div class="fluxo-de-processo-3-informacoes">
+                                <h3 class="fluxo-de-processo-3-titulo">Consulta</h3>
+                                <p class="fluxo-de-processo-3-paragrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utlabore etdolore magna aliqua.</p>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Processo 4 -->
-                    <div id="fluxo-de-processo-4" class="fluxo-de-processo-4">
-                        <div class="fluxo-de-processo-4-imagem"><img src="{% static '/imagens/fluxo-de-processo/checklist.svg' %}"></div>
-                        <div class="fluxo-de-processo-4-informacoes">
-                            <h3 class="fluxo-de-processo-4-titulo">Pós-Consulta</h3>
-                            <p class="fluxo-de-processo-4-paragrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utlabore etdolore magna aliqua.</p>
+                        <!-- Processo 4 -->
+                        <div id="fluxo-de-processo-4" class="fluxo-de-processo-4">
+                            <div class="fluxo-de-processo-4-imagem"><img src="{% static '/imagens/fluxo-de-processo/checklist.svg' %}"></div>
+                            <div class="fluxo-de-processo-4-informacoes">
+                                <h3 class="fluxo-de-processo-4-titulo">Pós-Consulta</h3>
+                                <p class="fluxo-de-processo-4-paragrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utlabore etdolore magna aliqua.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -89,7 +91,7 @@
                 </div>
 
                 <!-- Formulário de Consulta -->
-                <div class="formulario-agendar-consulta" data-aos="fade-left" data-aos-duration="1000">
+                <div class="formulario-agendar-consulta animated fadeInRight">
                     <h1>Agende sua Consulta</h1>
                     <form action="{% url 'index' %}" method="POST" id="formulario-agendamento-consulta" class="formulario-agendamento-consulta">
                         {% csrf_token %}
@@ -153,7 +155,6 @@
                 </div>
             </div>
         </div>
-
     </section>
 
     <h1>Quem Somos</h1>
@@ -176,7 +177,6 @@
     <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/src/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 
@@ -184,7 +184,6 @@
     <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script> 
     <script src="{% static '/js/bootstrap-datepicker.pt-BR.min.js' %}" charset="UTF-8"></script>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- Processo Ativo - Botões -->
     <script>
@@ -279,10 +278,6 @@
                 }],
             });
         });
-    </script>
-
-    <script>
-        AOS.init();
     </script>
 
     {% if fragmento %}
