@@ -22,7 +22,7 @@
                     {% for especialidade in especialidades %}
                         <div class="carousel-especialidade-card">
                             <img src="{{especialidade.imagem.url}}" alt="imagem - {{especialidade.nome}}">
-                            <h3 title="{{especialidade.nome}}">{{especialidade.nome | truncatechars_html:20}}</h3>
+                            <h3 data-toggle="tooltip" data-placement="top" title="{{especialidade.nome}}">{{especialidade.nome | truncatechars_html:20}}</h3>
                             <p>{{especialidade.descricao | truncatechars_html:210}}</p>
                             <form action="{% url 'especialidade_especifica' especialidade.id %}">
                                 <button class="button-saibamais-carousel-card">Saiba Mais</button>
@@ -278,6 +278,11 @@
                 }],
             });
         });
+
+        // Tooltip
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
     </script>
 
     {% if fragmento %}
