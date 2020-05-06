@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
+from django.http import HttpResponse
 from datetime import datetime
 import re
 
@@ -28,7 +29,19 @@ class Index(View):
             quemSomos = QuemSomos.objects.latest('pk')
         except QuemSomos.DoesNotExist:
             quemSomos = None
-            
+
+        #verifica se existe um id de elemento passado pela navbar
+        if request.POST.get('fragmento'):
+            fragmento = "#" + request.POST.get('fragmento')
+
+            especialidades = Especialidade.objects.all()
+            form = ConsultaForm()
+            return render(request, 'index.html', {'especialidades': especialidades,
+                                                'form': form,
+                                                'quemSomos': quemSomos,
+                                                'fragmento': fragmento})
+
+        #continua para aqui se o post não foi solicitado pela navbar    
         form = ConsultaForm(request.POST)
         especialidades = Especialidade.objects.all()
         fragmento = "#form"
@@ -66,7 +79,7 @@ class Index(View):
                                               'form': form,
                                               'quemSomos': quemSomos,
                                               'fragmento':fragmento})
-
+                      
 
 def especialidades (request):
     especialidades = Especialidade.objects.all()
