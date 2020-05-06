@@ -5,63 +5,139 @@
     <meta charset="UTF-8">
     <title>MedFamília</title>
 
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
     {% block css %}
 
     {% endblock %}
 
 </head>
 <body>
+    <section id="navbar">
+        <div id="navbar-desktop">
+            <div class="navbar-desktop-container">
+                <img src="{% static 'imagens/logo.png' %}" class="navbar-logo">
+                <div class="navbar-desktop-links">
+                    <ul class="navbar-desktop-section-links" id="navbar-desktop-section-links">
+                        {% if request.path == '/' %}
+                            <li><a href="#home" class="active">Home</a></li>
+                            <li><a href="#quem-somos">Quem Somos</a></li>
+                            <li><a href="#especialidades">Especialidades</a></li>
+                            <li><a href="#agendar-sua-consulta">Marcar Consulta</a></li>
+                            <li><a href="#contato">Contato</a></li>
 
-    <nav>
-        {% if request.path == '/' %}
-            <a href="#home">Home</a>
-            <a href="#quem-somos">Quem Somos</a>
-            <a href="#especialidades">Especialidades</a>
-            <a href="#agendar-sua-consulta">Marcar Consulta</a>
-            <a href="#contato">Contato</a>
+                        {% else %}
+                            <li>
+                            <form action="{% url 'index' %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="fragmento" value="Home">
+                                <button href="">Home</button>
+                            </form>
+                            </li>
+                            <li>
+                            <form action="{% url 'index' %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="fragmento" value="quem-somos">
+                                <button>Quem Somos</button>
+                            </form>
+                            </li>
+                            <li>
+                            <form action="{% url 'index' %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="fragmento" value="especialidades">
+                                <button>Especialidades</button>
+                            </form>
+                        </li>   
+                            <li>
+                            <form action="{% url 'index' %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="fragmento" value="agendar-sua-consulta">
+                                <button>Marcar Consulta</button>
+                            </form>
+                        </li>
+                            <li>
+                            <form action="{% url 'index' %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="fragmento" value="contato">
+                                <button>Contato</button>
+                            </form>
+                        </li>
+                        {% endif %}
+                    </ul>
+                    <ul class="navbar-desktop-social-links">
+                        <li><a href="https://api.whatsapp.com/send?1=pt_BR&phone=5584999530043" target="_blank"><i class="fab fa-whatsapp" onclick="openNav()"></i></a></li>
+                        <li><a href="https://www.instagram.com/medfamilia/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.facebook.com/clinicamedfamilia/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    </ul>
+                </div>
+                <div class="menu-navbar-mobile-botao">
+                    <i class="fas fa-bars open-navbar-mobile-botao" onclick="openNavMobile()"></i>
+                    <i class="fas fa-times close-navbar-mobile-botao" onclick="closeNavMobile()" style="display: none;"></i>
+                </div>
+            </div>
+        </div>
 
-        {% else %}
-            <form action="{% url 'index' %}" method="POST">
-                {% csrf_token %}
-                <input type="hidden" name="fragmento" value="Home">
-                <button>Home</button>
-            </form>
-
-            <form action="{% url 'index' %}" method="POST">
-                {% csrf_token %}
-                <input type="hidden" name="fragmento" value="quem-somos">
-                <button>Quem Somos</button>
-            </form>
-
-            <form action="{% url 'index' %}" method="POST">
-                {% csrf_token %}
-                <input type="hidden" name="fragmento" value="especialidades">
-                <button>Especialidades</button>
-            </form>
-
-            <form action="{% url 'index' %}" method="POST">
-                {% csrf_token %}
-                <input type="hidden" name="fragmento" value="agendar-sua-consulta">
-                <button>Marcar Consulta</button>
-            </form>
-            
-            <form action="{% url 'index' %}" method="POST">
-                {% csrf_token %}
-                <input type="hidden" name="fragmento" value="contato">
-                <button>Contato</button>
-            </form>
-        {% endif %}
-    </nav>
+        <div id="navbar-mobile">
+            <div id="navbar-mobile-content" class="navbar-mobile-container">
+                <a href="#home" class="active">Home</a>
+                <a href="#quemsomos">Quem Somos</a>
+                <a href="#especialidades">Especialidades</a>
+                <a href="#agendarconsulta">Agendar Consulta</a> 
+                <a href="#contato">Contato</a>
+                <ul class="navbar-mobile-social-links">
+                    <li><a href="https://api.whatsapp.com/send?1=pt_BR&phone=5584999530043" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    <li><a href="https://www.instagram.com/medfamilia/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/clinicamedfamilia/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                </ul>           
+            </div>
+        </div>
+    </section>
+    
 
     {% block body %}
 
     {% endblock %}
-
-
     
+</body>
+
+
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+
+    <script>      
+        const navbar = document.getElementById('navbar-mobile-content');
+        var openButton = document.getElementsByClassName('open-navbar-mobile-botao')[0];
+        var closeButton = document.getElementsByClassName('close-navbar-mobile-botao')[0];
+
+        function openNavMobile() {
+            navbar.style.width = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+            openButton.style.display = 'none';
+            closeButton.style.display = 'block';
+        }
+
+        function closeNavMobile() {
+            navbar.style.width = "0";
+            document.body.style.backgroundColor = "white";
+            openButton.style.display = 'block';
+            closeButton.style.display = 'none';
+        }
+
+    </script>
+
+    <script>
+        $('#navbar-desktop-section-links li a').click(function() {
+            $('#navbar-desktop-section-links li a').removeClass('active');
+            $(this).addClass('active'); 
+        }); 
+
+        $('.navbar-mobile-container a').click(function() {
+            $('.navbar-mobile-container a').removeClass('active');
+            $(this).addClass('active'); 
+        }); 
+    </script>
+
     {% block script %}
 
     {% endblock %}
     
-</body>
 </html>
