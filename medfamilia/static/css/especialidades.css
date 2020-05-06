@@ -1,41 +1,7 @@
-/* CSS Configurações */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
-
-*{
-    margin: 0;
-    padding: 0;
-}
-body h1{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 48px;
-    color: black;
-}
-body h2{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 40px;
-    color: black;
-}
-body h3{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 28px;
-    color: black;
-}
-body span{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 24px;
-    color: black;
-}
-body p{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: black;   
-}
 /* Especialidades Gerais */
+#especialidades-gerais{
+    padding-top: 100px;
+}
 .especialidades-gerais-container{
     width: 90%;
     margin: auto;

@@ -1,15 +1,60 @@
+/* CSS - CONFIGURAÇÕES GERAIS */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
 *{
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
-body{
-    transition: 0.5s ease-in-out;
+body h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+}
+body h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+}
+body h3{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+}
+body span{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+}
+body p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;   
 }
 body a{
     font-family: 'Montserrat';
     font-weight: 700;
+}
+/* Seletor de Caracteres */
+::selection{
+    background: #F4DAEA;
+    color: black;
+}
+/* Barra Lateral de Navegação */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 0px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(175, 175, 175); 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #CF6F80; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #A04454; 
 }
 
 /* NAVBAR DESKTOP */
@@ -18,8 +63,8 @@ body a{
     position: fixed;
     width: 100%;
     margin: auto;
-    padding: 10px 0px;
-
+    padding: 10px 0px 0px;
+    z-index: 99;
 }
 .navbar-desktop-container{
     width: 95%;
@@ -41,6 +86,7 @@ body a{
     padding-right: 20px;
     margin-right: 20px;
     border-right: 1px solid rgb(255, 183, 230);
+    cursor: pointer;
 }
 .navbar-desktop-section-links li{
     list-style: none;
@@ -49,7 +95,7 @@ body a{
 .navbar-desktop-section-links li a{
     text-decoration: none;
     font-size: 16px;
-    padding: 28px 20px;
+    padding: 29px 20px;
     color: #8E1F67;
     transition: 0.3s ease-in-out;
     border-bottom: 2px solid transparent;
@@ -73,9 +119,12 @@ body a{
 .navbar-desktop-social-links li a{
     color: black;
     text-decoration: none;
-    font-size: 20px;
-    padding: 28px 10px;
+    font-size: 14px;
+    padding: 20px 10px;
     transition: 0.3s ease-in-out;
+}
+.navbar-desktop-social-links li a i{
+    font-size: 25px;
 }
 .navbar-desktop-social-links li a:hover{
     color: #8E1F67;
@@ -138,7 +187,7 @@ body a{
 }
 
 /* Responsive Codes */
-@media screen and (max-width: 1150px){
+@media screen and (max-width: 1170px){
     .navbar-desktop-links{
         display: none;
     }
