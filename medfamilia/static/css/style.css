@@ -222,16 +222,16 @@
 }
 
 /* Responsive Codes */
-@media screen and (max-width:1300px){
+@media screen and (max-width: 1300px){
     .formulario-agendar-consulta{
         width: 40%;
         margin: auto;
     }
     .formulario-agendar-consulta form{
-        width: 90%;
+        width: 100%;
     }
 }
-@media screen and (max-width:1000px){
+@media screen and (max-width: 1000px){
     .fluxo-de-processo,
     .fluxo-de-processo-botoes{
         display: none;

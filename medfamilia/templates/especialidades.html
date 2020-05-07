@@ -2,6 +2,8 @@
 {% load static %}
 
 {% block css %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/especialidades.css' %}">
 {% endblock %}
 
@@ -16,7 +18,7 @@
                         {% for especialidade in especialidades %}
                             <div class="especialidades-gerais-card">
                                 <img src="{{especialidade.imagem.url}}" alt="imagem - {{especialidade.nome}}">
-                                <h3 title="{{especialidade.nome}}">{{especialidade.nome | truncatechars_html:20}}</h3>
+                                <h3 data-toggle="tooltip" data-placement="bottom" title="{{especialidade.nome}}">{{especialidade.nome | truncatechars_html:20}}</h3>
                                 <p>{{especialidade.descricao | truncatechars_html:200}}</p>
                                 <form action="{% url 'especialidade_especifica' especialidade.id %}">
                                     <button class="button-saibamais-carousel-card">Saiba Mais</button>
@@ -29,8 +31,13 @@
         </div>
     </section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/src/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script>
-        AOS.init();
+        // Tooltip
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
     </script>
 {% endblock %}
