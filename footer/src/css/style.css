@@ -1,0 +1,41 @@
+#footer{
+    padding: 10px 0px;
+}
+.footer-container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-container img{
+    width: 150px;
+}
+.footer-container span{
+    color: black;
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
+.footer-container span strong{
+    color: rgb(189, 45, 129);
+}
+.footer-container span a{
+    color: black;
+    text-decoration: none;
+}
+.botao-voltar-para-topo a{
+    background: rgb(156, 197, 236); 
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat';
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: 0.4s ease-in-out;
+}
+.botao-voltar-para-topo a:hover{
+    background: rgb(124, 190, 252);
+    box-shadow: 0px 0px 20px rgba(124, 190, 252, 0.3);
+}
