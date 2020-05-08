@@ -73,6 +73,13 @@
         align-items: center;
         justify-content: center;
     }
+    .contato-card-informacao-midias-sociais{
+        width: 40%;
+        display: flex;
+        flex-direction: row;
+        margin-left: 100px;
+        margin-right: 20px;
+    }
     .contato-card-informacao-midias-contato{
         width: 60%;
         margin-left: 0px;
@@ -81,9 +88,9 @@
         justify-content: right;
         align-items: center;
     }
-    .contato-card-informacao-midias-sociais{
-        width: 30%;
-        border-right: 1px solid rgb(56, 111, 134);
+    .contato-card-informacao-midias-contato{
+        width: 80%;
+        border-left: 1px solid rgb(56, 111, 134);
     }
     .contato-card-informacao-midias-sociais a{
         margin: auto;
