@@ -72,7 +72,7 @@ body a{
 }
 .navbar-desktop-container img{
     width: 200px;
-    margin: 4px;
+    margin: 5px;
 }
 .navbar-desktop-links{
     display: flex;
@@ -134,8 +134,8 @@ body a{
 .menu-navbar-mobile-botao{
     display: none;
     float: right;
-    font-size: 40px;
-    margin: 10px;
+    font-size: 70px;
+    padding: 25px;
     color: white;
     transition: 0.4s ease-in-out;
 }
@@ -145,25 +145,31 @@ body a{
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 99;
     top: 0;
     right: 0;
     background: #F4DAEA;
     overflow-x: hidden;
     transition: 0.5s;
-    margin-top: 70px;
+    margin-top: 130px;
 }
 .navbar-mobile-container a{
     text-align: right;
-    padding: 15px 20px;
+    padding: 20px 30px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 40px;
     color: #8E1F67;
     display: block;
     transition: 0.3s;
 }
-.navbar-mobile-container .active{
+.navbar-mobile-container .active,
+.navbar-mobile-container a:active{
     background: #EAB9D7;
+    color: #8E1F67;
+    text-decoration: none;
+}
+.navbar-mobile-container a{
+    color: #8E1F67;
 }
 .navbar-mobile-social-links{
     display: flex;
@@ -175,7 +181,8 @@ body a{
 }
 .navbar-mobile-social-links a{
     color: black;
-    font-size: 30px;
+    font-size: 70px;
+    margin-bottom: 20px;
 }
 .navbar-mobile-container .close-navbar-mobile-botao{
     position: absolute;
@@ -190,6 +197,10 @@ body a{
 @media screen and (max-width: 1170px){
     .navbar-desktop-links{
         display: none;
+    }
+    .navbar-desktop-container img{
+        width: 40%;
+        margin-top: 20px;
     }
     .menu-navbar-mobile-botao{
         display: block;

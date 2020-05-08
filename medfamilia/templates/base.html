@@ -82,11 +82,44 @@
 
         <div id="navbar-mobile">
             <div id="navbar-mobile-content" class="navbar-mobile-container">
+                {% if request.path == '/' %}
                 <a href="#home" class="active">Home</a>
                 <a href="#quem-somos">Quem Somos</a>
                 <a href="#especialidades">Especialidades</a>
-                <a href="#agendar-sua-consulta">Agendar Consulta</a> 
+                <a href="#agendar-sua-consulta">Agende sua Consulta</a>
                 <a href="#contato">Contato</a>
+
+            {% else %}
+                <form action="{% url 'index' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="fragmento" value="Home">
+                    <a onclick="this.closest('form').submit();return false;">Home</a>
+                </form>
+
+                <form action="{% url 'index' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="fragmento" value="quem-somos">
+                    <a onclick="this.closest('form').submit();return false;">Quem Somos</a>
+                </form>
+
+                <form action="{% url 'index' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="fragmento" value="especialidades">
+                    <a onclick="this.closest('form').submit();return false;">Especialidades</a>
+                </form>
+
+                <form action="{% url 'index' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="fragmento" value="agendar-sua-consulta">
+                    <a onclick="this.closest('form').submit();return false;">Agende sua Consulta</a>
+                </form>
+
+                <form action="{% url 'index' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="fragmento" value="contato">
+                    <a onclick="this.closest('form').submit();return false;">Contato</a>
+                </form>
+            {% endif %}
                 <ul class="navbar-mobile-social-links">
                     <li><a href="https://api.whatsapp.com/send?1=pt_BR&phone=5584999530043" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                     <li><a href="https://www.instagram.com/medfamilia/" target="_blank"><i class="fab fa-instagram"></i></a></li>
@@ -112,7 +145,7 @@
         var closeButton = document.getElementsByClassName('close-navbar-mobile-botao')[0];
 
         function openNavMobile() {
-            navbar.style.width = "250px";
+            navbar.style.width = "60%";
             openButton.style.display = 'none';
             closeButton.style.display = 'block';
         }
