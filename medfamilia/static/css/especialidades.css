@@ -1,11 +1,23 @@
 /* Especialidades Gerais */
 #especialidades-gerais{
-    padding-top: 200px;
+    padding-top: 150px;
 }
 .especialidades-gerais-container{
     width: 90%;
     margin: auto;
     overflow: hidden;
+}
+.voltar-para-pagina-anterior-botao i{
+    background: rgb(236, 236, 236);
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 20px;
+    margin-bottom: -50px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.voltar-para-pagina-anterior-botao i:hover{
+    background: rgb(231, 231, 231);
 }
 .especialidades-gerais-content h1{
     text-align: center;
@@ -91,6 +103,9 @@
     }
 }
 @media screen and (max-width: 1250px){
+    #especialidades-gerais{
+        padding-top: 200px;
+    }
     .especialidades-gerais-card{
         width: 45%;
     }

@@ -30,7 +30,6 @@
 .missao{
     border-left: 1px solid rgb(228, 228, 228);
     border-right: 1px solid rgb(228, 228, 228);
-    padding: 0px 30px;
 }
 .quem-somos-card h3{
     display: flex;
@@ -75,7 +74,7 @@
     }
     .quem-somos-card p{
         width: 95%;
-        font-size: 24px;
+        font-size: 28px;
         font-weight: 600;
     }
     .missao{

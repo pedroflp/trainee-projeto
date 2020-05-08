@@ -1,7 +1,7 @@
 /* Mensagem Solicitação Formulário */
 .solicitacao-formulario-container{
     width: 80%;
-    padding: 50px 0px;
+    padding: 150px 0px;
     margin: auto;
 }
 .solicitacao-formulario-header{
@@ -43,6 +43,9 @@
 }
 
 @media screen and (max-width: 1000px){
+    .solicitacao-formulario-container{
+        padding-top: 250px;
+    }
     .solicitacao-formulario-header{
         flex-direction: column;
     }
@@ -50,15 +53,20 @@
         text-align: center;
         width: 100%;
     }
+    .solicitacao-formulario-mensagem h1{
+        font-size: 55px;
+    }
     .solicitacao-formulario-mensagem p{
-        margin: 50px 0px 0px;
+        margin: 50px 0px;
+        font-size: 36px;
     }
     .solicitacao-formulario-imagem{
         width: 100%;
     }
-    .solicitacao-formulario-botao{
-        width: 100%;
-        margin: 50px auto;
+    .solicitacao-formulario-botao form button{
+        margin: 80px auto;
+        font-size: 30px;
+        padding: 20px 50px;
         display: flex;
         align-items: center;
         justify-content: center;
