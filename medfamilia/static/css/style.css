@@ -159,15 +159,15 @@
     font-weight: 600;
 }
 .data-select-formulario-agendar-consulta{
-    width: 50%;
+    width: 60%;
 }
 .data-select-container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.data-input-select-form-agendamento{
-    width: 85% !important;
+.data-select-formulario-agendar-consulta input{
+    width: 100%;
     border-radius: 5px !important;
     cursor: pointer !important;
     padding: 20px 10px !important;
@@ -204,7 +204,6 @@
     font-weight: 600;
 }
 .formulario-agendar-consulta form input[type = "submit"]{
-    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -214,7 +213,7 @@
     margin: 40px auto 30px;
     color: #0B182B;
     background: #74BCFF;
-    border-radius: 30px;
+    border-radius: 50px;
     transition: 0.4s ease-in-out;
 }
 .formulario-agendar-consulta form input[type = "submit"]:hover{
@@ -226,12 +225,15 @@
     .formulario-agendar-consulta{
         width: 40%;
         margin: auto;
+        padding: 20px 0px;
     }
     .formulario-agendar-consulta form{
         width: 100%;
     }
 }
+
 @media screen and (max-width: 1000px){
+    /* Agendar Consulta */
     .fluxo-de-processo,
     .fluxo-de-processo-botoes{
         display: none;
@@ -239,5 +241,28 @@
     .formulario-agendar-consulta{
         width: 80%;
         margin: auto;
+    }
+    .formulario-agendar-consulta h1{
+        font-size: 50px;
+    }
+    .formulario-agendar-consulta h3{
+        font-size: 40px;
+    }
+    .formulario-agendar-consulta form input,
+    .formulario-agendar-consulta form select,
+    .formulario-agendar-consulta form textarea,
+    .formulario-agendar-consulta form textarea{
+        padding: 20px;
+        font-size: 30px;
+        margin: 20px 0px;
+    }
+    .formulario-agendar-consulta form select option{
+        font-size: 16px;
+    }
+    .data-select-formulario-agendar-consulta input{
+        padding: 40px 20px!important;
+    }
+    .formulario-agendar-consulta form input[type = "submit"]{
+        font-size: 30px;
     }
 }

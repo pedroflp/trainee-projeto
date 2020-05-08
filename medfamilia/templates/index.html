@@ -181,34 +181,34 @@
 
                         <!-- Nome -->
                         <div class="nome-input-formulario-agendar-consulta">
-                            <h3>Nome *</h3>
+                            <h3>Nome</h3>
                             {{form.nome}}
                         </div>
                         <!-- Email -->
                         <div class="email-input-formulario-agendar-consulta">
-                            <h3>Email *</h3>
+                            <h3>Email</h3>
                             {{form.email}}
                         </div>
                         <!-- Telefone -->
                         <div class="telefone-input-formulario-agendar-consulta">
-                            <h3>Telefone *</h3>
+                            <h3>Telefone</h3>
                             {{form.telefone}}
                         </div>
                         <!-- Especialidade -->
                         <div class="especialidade-select-formulario-agendar-consulta">
-                            <h3>Especialidade *</h3>
+                            <h3>Especialidade</h3>
                             {{form.especialidade}}
                         </div>
                         <!-- Data e Turno -->
                         <div class="data-select-container">
                             <!-- Data -->
                             <div class="data-select-formulario-agendar-consulta input-group date">
-                                <h3>Data *</h3>
+                                <h3>Data</h3>
                                 {{form.data}}
                             </div>
                             <!-- Turno -->
                             <div class="turno-select-formulario-agendar-consulta">
-                                <h3>Turno *</h3>
+                                <h3>Turno</h3>
                                 {{form.turno}}
                             </div>
                         </div>
@@ -363,6 +363,13 @@
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 1000,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
                     }
                 }],     
             });

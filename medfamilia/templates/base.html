@@ -34,35 +34,35 @@
                             <form action="{% url 'index' %}" method="POST">
                                 {% csrf_token %}
                                 <input type="hidden" name="fragmento" value="Home">
-                                <a onclick="this.closest('form').submit();return false;">Home</a>
+                                <a href="" onclick="this.closest('form').submit();return false;">Home</a>
                             </form>
                             </li>
                             <li>
                             <form action="{% url 'index' %}" method="POST">
                                 {% csrf_token %}
                                 <input type="hidden" name="fragmento" value="quem-somos">
-                                <a onclick="this.closest('form').submit();return false;">Quem Somos</a>
+                                <a href="" onclick="this.closest('form').submit();return false;">Quem Somos</a>
                             </form>
                             </li>
                             <li>
                             <form action="{% url 'index' %}" method="POST">
                                 {% csrf_token %}
                                 <input type="hidden" name="fragmento" value="especialidades">
-                                <a onclick="this.closest('form').submit();return false;">Especialidades</a>
+                                <a href="" onclick="this.closest('form').submit();return false;">Especialidades</a>
                             </form>
                         </li>   
                             <li>
                             <form action="{% url 'index' %}" method="POST">
                                 {% csrf_token %}
                                 <input type="hidden" name="fragmento" value="agendar-sua-consulta">
-                                <a onclick="this.closest('form').submit();return false;">Agende sua Consulta</a>
+                                <a href="" onclick="this.closest('form').submit();return false;">Agende sua Consulta</a>
                             </form>
                         </li>
                             <li>
                             <form action="{% url 'index' %}" method="POST">
                                 {% csrf_token %}
                                 <input type="hidden" name="fragmento" value="contato">
-                                <a onclick="this.closest('form').submit();return false;">Contato</a>
+                                <a href="" onclick="this.closest('form').submit();return false;">Contato</a>
                             </form>
                         </li>
                         {% endif %}
@@ -93,31 +93,31 @@
                 <form action="{% url 'index' %}" method="POST">
                     {% csrf_token %}
                     <input type="hidden" name="fragmento" value="Home">
-                    <a onclick="this.closest('form').submit();return false;">Home</a>
+                    <a href="" onclick="this.closest('form').submit();return false;">Home</a>
                 </form>
 
                 <form action="{% url 'index' %}" method="POST">
                     {% csrf_token %}
                     <input type="hidden" name="fragmento" value="quem-somos">
-                    <a onclick="this.closest('form').submit();return false;">Quem Somos</a>
+                    <a href="" onclick="this.closest('form').submit();return false;">Quem Somos</a>
                 </form>
 
                 <form action="{% url 'index' %}" method="POST">
                     {% csrf_token %}
                     <input type="hidden" name="fragmento" value="especialidades">
-                    <a onclick="this.closest('form').submit();return false;">Especialidades</a>
+                    <a href="" onclick="this.closest('form').submit();return false;">Especialidades</a>
                 </form>
 
                 <form action="{% url 'index' %}" method="POST">
                     {% csrf_token %}
                     <input type="hidden" name="fragmento" value="agendar-sua-consulta">
-                    <a onclick="this.closest('form').submit();return false;">Agende sua Consulta</a>
+                    <a href="" onclick="this.closest('form').submit();return false;">Agende sua Consulta</a>
                 </form>
 
                 <form action="{% url 'index' %}" method="POST">
                     {% csrf_token %}
                     <input type="hidden" name="fragmento" value="contato">
-                    <a onclick="this.closest('form').submit();return false;">Contato</a>
+                    <a href="" onclick="this.closest('form').submit();return false;">Contato</a>
                 </form>
             {% endif %}
                 <ul class="navbar-mobile-social-links">
@@ -133,18 +133,11 @@
     {% block body %}
 
     {% endblock %}
+    
+</body>
 
-    {% block script %}
+
     <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/src/js/bootstrap.min.js%22%3E"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script>
-        // Tooltip
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-    </script>
 
     <script>      
         const navbar = document.getElementById('navbar-mobile-content');
@@ -176,8 +169,9 @@
             $(this).addClass('active'); 
         }); 
     </script>
-    {% endblock %}
 
+    {% block script %}
+
+    {% endblock %}
     
-</body>   
 </html>

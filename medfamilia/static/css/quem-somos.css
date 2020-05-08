@@ -70,8 +70,13 @@
     .quem-somos-card{
         margin: 0px 0px 50px;
     }
+    .quem-somos-card h3{
+        font-size: 45px;
+    }
     .quem-somos-card p{
         width: 95%;
+        font-size: 24px;
+        font-weight: 600;
     }
     .missao{
         border: none;
