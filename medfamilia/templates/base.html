@@ -6,6 +6,7 @@
     <title>MedFamília</title>
 
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"  rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -33,7 +34,7 @@
                             <li>
                             <form action="{% url 'index' %}" method="POST">
                                 {% csrf_token %}
-                                <input type="hidden" name="fragmento" value="Home">
+                                <input type="hidden" name="fragmento" value="home">
                                 <a href="" onclick="this.closest('form').submit();return false;">Home</a>
                             </form>
                             </li>
@@ -92,7 +93,7 @@
             {% else %}
                 <form action="{% url 'index' %}" method="POST">
                     {% csrf_token %}
-                    <input type="hidden" name="fragmento" value="Home">
+                    <input type="hidden" name="fragmento" value="home">
                     <a href="" onclick="this.closest('form').submit();return false;">Home</a>
                 </form>
 
@@ -133,6 +134,18 @@
     {% block body %}
 
     {% endblock %}
+
+    <footer id="footer">
+        <div class="footer-container">
+            <img src="{% static 'imagens/logo.png' %}" class="footer-logo">
+            <div class="footer-copyright-informacao">
+                <p><strong>MedFamilia © 2020</strong><br>Desenvolvido por <a href="http://www.ejectufrn.com.br/" target="_blank"><i class="fas fa-eject"></i> EJECT</a></p>
+            </div>
+            <div class="botao-voltar-para-topo">
+                    <a href="" onclick="topFunction()" >Voltar para o Topo</a>
+            </div>
+        </div>
+    </footer>
     
 </body>
 
@@ -168,6 +181,13 @@
             $('.navbar-mobile-container a').removeClass('active');
             $(this).addClass('active'); 
         }); 
+    </script>
+
+    <script> //Função para retornar ao topo da página
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        } 
     </script>
 
     {% block script %}

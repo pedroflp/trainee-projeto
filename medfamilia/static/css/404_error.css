@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#pagina-error{
+    padding-top: 150px;
+}
+.pagina-error-container{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pagina-error-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.pagina-error-content p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    font-family: 'Montserrat';
+    font-size: 24px;
+    font-weight: 700;
+    color: #323145;
+}
+.pagina-error-content p strong a{
+    color: #8E1F67;
+    text-decoration: none;
+}
+.pagina-error-content p strong a:hover{
+    color: rgb(105, 23, 76);
+    text-decoration: underline;
+}
