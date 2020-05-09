@@ -6,11 +6,12 @@
 .especialidades-container{
     width: 90%;
     margin: auto;
-    padding: 30px 0px;
+    padding: 50px 0px;
 }
 .especialidades-container h1{
     text-align: center;
-    margin: 30px 0px 20px;
+    margin: 50px 0px 20px;
+    color: black;
 }
 .linha-abaixo-titulo{
     border-bottom: 2px solid black;

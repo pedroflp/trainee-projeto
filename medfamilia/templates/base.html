@@ -139,10 +139,10 @@
         <div class="footer-container">
             <img src="{% static 'imagens/logo.png' %}" class="footer-logo">
             <div class="footer-copyright-informacao">
-                <p><strong>MedFamilia © 2020</strong><br>Desenvolvido por <a href="http://www.ejectufrn.com.br/" target="_blank"><i class="fas fa-eject"></i> EJECT</a></p>
+                <p><strong>MedFamilia © 2020</strong> Desenvolvido por <a href="http://www.ejectufrn.com.br/" target="_blank"><i class="fas fa-eject"></i> EJECT</a></p>
             </div>
             <div class="botao-voltar-para-topo">
-                    <a href="" onclick="topFunction()" >Voltar para o Topo</a>
+                <a onclick="voltarParaTopo()">Voltar para o Topo</a>
             </div>
         </div>
     </footer>
@@ -183,10 +183,22 @@
         }); 
     </script>
 
-    <script> //Função para retornar ao topo da página
-        function topFunction() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5eb6cc798ee2956d739f903e/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+
+    <script>
+        function voltarParaTopo() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         } 
     </script>
 

@@ -1,4 +1,7 @@
 /* Quem somos */
+#quem-somos{
+    padding: 100px 0;
+}
 .quem-somos-container{
     width: 90%;
     margin: auto;
