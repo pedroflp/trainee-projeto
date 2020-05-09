@@ -11,12 +11,12 @@
         <div class="solicitacao-formulario-content">
             <div class="solicitacao-formulario-header">
                 <div class="solicitacao-formulario-mensagem">
-                    <h1>Sua consulta foi Solicitada!</h1>
-                    <p><strong>Olá, {{nome}}!</strong> recebemos sua solicitação de consulta e iremos analisá-la! Retornaremos contato em breve pelos meios de contatos que foram cadastrados para confirmarmos sua solicitação de consulta ou informar que precisaremos ajustá-la para outra data e/ou turno!</p>
-                    <p>A <strong>MedFamilia</strong> agradece a preferência!</p>
+                    <h1 data-aos="fade-right" data-aos-duration="1000">Sua consulta foi Solicitada!</h1>
+                    <p data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000"><strong>Olá, {{nome}}!</strong> recebemos sua solicitação de consulta e iremos analisá-la! Retornaremos contato em breve pelos meios de contatos que foram cadastrados para confirmarmos sua solicitação de consulta ou informar que precisaremos ajustá-la para outra data e/ou turno!</p>
+                    <p data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000">A <strong>MedFamilia</strong> agradece a preferência!</p>
                 </div>
 
-                <div class="solicitacao-formulario-imagem">
+                <div class="solicitacao-formulario-imagem" data-aos="fade-left" data-aos-duration="1000">
                     <svg width="461" height="332" viewBox="0 0 461 332" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0)">
                         <path opacity="0.1" d="M267.849 58.5508C238.295 57.5243 210.125 47.9885 183.266 37.5577C156.407 27.1269 129.786 15.5677 100.924 10.0405C82.3673 6.4816 61.1452 5.98105 46.1963 15.924C31.8077 25.4895 27.1601 42.0032 24.6601 57.3249C22.7798 68.8543 21.689 80.9861 26.829 91.7818C30.407 99.2729 36.7567 105.572 41.1497 112.749C56.4296 137.721 45.6276 168.518 29.0658 192.921C21.2985 204.374 12.2876 215.272 6.29445 227.45C0.301314 239.629 -2.47454 253.58 2.77157 266C7.971 278.302 20.3562 287.558 33.7771 294.061C61.0348 307.257 93.1524 311.032 124.472 313.196C193.801 317.934 263.503 315.881 333.013 313.828C358.739 313.064 384.579 312.296 409.884 308.313C423.938 306.103 438.449 302.599 448.653 294.141C461.603 283.401 464.816 265.22 456.136 251.752C441.577 229.168 401.328 223.556 391.149 199.318C385.551 185.977 391.302 171.114 399.443 158.74C416.9 132.198 446.17 108.911 447.711 78.5683C448.772 57.7279 434.701 36.862 412.945 26.9996C390.143 16.6536 358.522 17.9601 341.702 35.0592C324.38 52.6758 293.939 59.4543 267.849 58.5508Z" fill="black"/>
@@ -137,7 +137,7 @@
                 </div>
             </div>
                 
-            <div class="solicitacao-formulario-botao">
+            <div class="solicitacao-formulario-botao" data-aos="fade-right" data-aos-delay="600" data-aos-duration="1000">
                 <form action="{% url 'index' %}">
                     <button >Voltar para início</button>
                 </form>

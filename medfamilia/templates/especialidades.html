@@ -10,12 +10,12 @@
 {% block body %}
     <section id="especialidades-gerais">
         <div class="especialidades-gerais-container">
-            <div class="voltar-para-pagina-anterior-botao" onclick="window.history.back();">
+            <div class="voltar-para-pagina-anterior-botao" onclick="window.history.back();" data-aos="fade-left" data-aos-duration="1000">
                 <i class="fas fa-arrow-left"></i>
             </div>
             <div class="especialidades-gerais-content">
-                <h1>Especialidades</h1>
-                <div class="linha-abaixo-titulo"></div>
+                <h1 data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000">Especialidades</h1>
+                <div class="linha-abaixo-titulo" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000"></div>
                 <div class="especialidades-gerais-content">
                     <div class="especialidades-gerais-cards" data-aos="fade-up" data-aos-duration="1000">
                         {% for especialidade in especialidades %}

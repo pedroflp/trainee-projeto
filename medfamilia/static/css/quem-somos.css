@@ -1,7 +1,4 @@
 /* Quem somos */
-#quem-somos{
-    padding: 100px 0;
-}
 .quem-somos-container{
     width: 90%;
     margin: auto;
@@ -26,26 +23,36 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 29%;
+    width: 31%;
+    height: 450px;
     margin: auto;
     text-align: center;
 }
 .missao{
     border-left: 1px solid rgb(228, 228, 228);
     border-right: 1px solid rgb(228, 228, 228);
+    padding: 0px 30px;
+}
+.quem-somos-card-title{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
 }
 .quem-somos-card h3{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30%;
+    width: 60%;
     padding: 10px 0px;
-    margin: 10px auto 30px;
+    margin: 10px auto 0px;
     text-align: center;
     border-bottom: 4px solid #8E1F67;
 }
 .quem-somos-card p{
-    width: 100%;
+    width: 70%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,7 +64,7 @@
         width: 100%;
     }
 }
-@media (max-width: 1000px){
+@media (max-width: 1200px){
     .quem-somos-container{
         width: 100%;
         padding: 10px 0px;
@@ -73,12 +80,11 @@
         margin: 0px 0px 50px;
     }
     .quem-somos-card h3{
-        font-size: 45px;
+        font-size: 40px;
     }
     .quem-somos-card p{
         width: 95%;
         font-size: 28px;
-        font-weight: 600;
     }
     .missao{
         border: none;

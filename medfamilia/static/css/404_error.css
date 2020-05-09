@@ -42,3 +42,16 @@
     color: rgb(105, 23, 76);
     text-decoration: underline;
 }
+/* Responsive Codes */
+@media screen and (max-width: 1000px){
+    #pagina-error{
+        padding: 300px 0px;
+    }
+    .pagina-error-content p{
+        font-size: 38px;
+    }
+    .pagina-error-content svg{
+        width: 800px;
+        height: 1000px;
+    }
+}

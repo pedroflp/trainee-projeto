@@ -83,10 +83,7 @@ body a{
 .navbar-desktop-section-links{
     display: flex;
     flex-direction: row;
-    padding-right: 20px;
-    margin-right: 20px;
-    border-right: 1px solid rgb(255, 183, 230);
-    cursor: pointer;
+    padding-right: 10px;
 }
 .navbar-desktop-section-links li{
     list-style: none;
@@ -95,9 +92,10 @@ body a{
 .navbar-desktop-section-links li a{
     text-decoration: none;
     font-size: 16px;
-    padding: 29px 20px;
+    padding: 25px 20px;
     color: #8E1F67;
     transition: 0.3s ease-in-out;
+    cursor: pointer;
     border-bottom: 2px solid transparent;
 }
 .navbar-desktop-section-links li a:hover{
@@ -110,14 +108,18 @@ body a{
 /* Social media links */
 .navbar-desktop-social-links{
     display: flex;
+    height: 30px;
+    margin: 10px auto;
+    padding-left: 20px;
     flex-direction: row;
+    border-left: 1px solid rgb(250, 191, 229);
 }
 .navbar-desktop-social-links li{
     list-style: none;
-    margin: 15px 0px;
+    margin: 3px 0px;
 }
 .navbar-desktop-social-links li a{
-    color: black;
+    color: rgb(26, 26, 26);
     text-decoration: none;
     font-size: 14px;
     padding: 20px 10px;

@@ -39,9 +39,9 @@ class Consulta (models.Model):
 
 
 class QuemSomos (models.Model):
-    missao = models.TextField(verbose_name='Missão')
-    visao = models.TextField(verbose_name='Visão')
-    valores = models.TextField()
+    visao = models.TextField(verbose_name='Visão', max_length=300)
+    missao = models.TextField(verbose_name='Missão', max_length=300)
+    valores = models.TextField(verbose_name='Valores', max_length=300)
 
     class Meta:
         verbose_name = 'Quem Somos'

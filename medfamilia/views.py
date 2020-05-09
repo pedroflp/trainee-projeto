@@ -137,4 +137,3 @@ class especialidade_especifica (View):
 
 def confirmacao_consulta (request, nome):
     return render (request, 'confirmacao_consulta.html', {'nome':nome})
-
