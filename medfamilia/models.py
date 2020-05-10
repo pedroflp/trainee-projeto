@@ -12,6 +12,7 @@ class Especialidade (models.Model):
 
     class Meta:
         ordering = ['nome']
+        verbose_name_plural = '02 - Especialidades'
 
 
 class Consulta (models.Model):
@@ -36,6 +37,7 @@ class Consulta (models.Model):
 
     class Meta:
         ordering = ['respondida', 'id']
+        verbose_name_plural = '03 - Consultas'
 
 
 class QuemSomos (models.Model):
@@ -45,4 +47,4 @@ class QuemSomos (models.Model):
 
     class Meta:
         verbose_name = 'Quem Somos'
-        verbose_name_plural = 'Quem Somos'
+        verbose_name_plural = '01 - Quem Somos'
