@@ -187,13 +187,14 @@
     width: 100%;
     padding: 12px 10px;
     border-radius: 5px;
-    border: none;
+    border: 1px solid transparent;
     font-family: 'Montserrat';
     font-weight: 600;
     color: rgb(34, 34, 34);
     background: rgb(240, 240, 240); 
     cursor: pointer;
     outline: none;
+    transition: 0.4s ease-in-out;
 }
 .formulario-agendar-consulta form select option{
     font-weight: 600;
@@ -216,14 +217,6 @@
     color: rgb(194, 194, 194);
     font-weight: 100;
 }
-.formulario-agendar-consulta form input:hover,
-.formulario-agendar-consulta form input:focus,
-.formulario-agendar-consulta form select:hover,
-.formulario-agendar-consulta form select:focus,
-.formulario-agendar-consulta form textarea:hover,
-.formulario-agendar-consulta form textarea:focus{
-    border: 1px solid rgba(73, 73, 73);
-}
 .formulario-agendar-consulta form input[type = "submit"]{
     display: flex;
     align-items: center;
@@ -245,11 +238,16 @@
     background: rgb(197, 68, 89);
     border: none;
 }
-
-.formulario-agendar-consulta form input:required:invalid,
-.formulario-agendar-consulta form select:required:invalid,
-.formulario-agendar-consulta form textarea:required:invalid{
-    border: 2px solid red;
+.formulario-agendar-consulta form input:invalid,
+.formulario-agendar-consulta form select:invalid{
+    border-bottom: 2px solid rgb(255, 137, 137);
+}
+.formulario-agendar-consulta form input:valid,
+.formulario-agendar-consulta form select:valid{
+    border-bottom: 2px solid rgb(137, 255, 200);
+}
+.formulario-agendar-consulta form input[type = "submit"]:valid{
+    border: none;
 }
 
 /* Responsive Codes */
