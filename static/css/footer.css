@@ -1,0 +1,65 @@
+#footer{
+    padding: 20px 0px;
+}
+.footer-container{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-container img{
+    width: 150px;
+}
+.footer-container p{
+    margin: auto;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
+.footer-container p strong{
+    color: #AA578D;
+}
+.footer-container p a{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.botao-voltar-para-topo a{
+    background: rgb(156, 197, 236); 
+    color: rgb(255, 255, 255) !important;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.botao-voltar-para-topo a:hover{
+    background: rgb(124, 190, 252);
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px rgba(124, 190, 252, 0.5);
+    text-decoration: none;
+}
+
+@media screen and (max-width: 700px){
+    .footer-container{
+        width: 100%;
+       justify-content: center; 
+    }
+    .footer-container img{
+        width: 130px;
+        margin: 0px 10px;
+    }
+    .footer-container p{
+        text-align: right;
+        font-size: 12px;
+        margin: 0px 10px;
+    }
+    .botao-voltar-para-topo a{
+        display: none;
+    }
+}

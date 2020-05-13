@@ -1,0 +1,74 @@
+/* Mensagem Solicitação Formulário */
+.solicitacao-formulario-container{
+    width: 80%;
+    padding: 200px 0px;
+    margin: auto;
+}
+.solicitacao-formulario-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.solicitacao-formulario-mensagem{
+    width: 60%;
+    margin-right: 50px;
+}
+.solicitacao-formulario-mensagem p{
+    margin: 50px 0px;
+}
+.solicitacao-formulario-imagem{
+    width: 40%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.solicitacao-formulario-imagem svg{
+    margin: auto;
+}
+.solicitacao-formulario-botao button{
+    background: #A6D0F4;
+    padding: 15px 40px;
+    border-radius: 50px;
+    border: none;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 22px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.solicitacao-formulario-botao button:hover{
+    background: rgb(122, 193, 255);
+}
+
+@media screen and (max-width: 1000px){
+    .solicitacao-formulario-container{
+        padding-top: 250px;
+    }
+    .solicitacao-formulario-header{
+        flex-direction: column;
+    }
+    .solicitacao-formulario-mensagem{
+        text-align: center;
+        width: 100%;
+    }
+    .solicitacao-formulario-mensagem h1{
+        font-size: 55px;
+    }
+    .solicitacao-formulario-mensagem p{
+        margin: 50px 0px;
+        font-size: 36px;
+    }
+    .solicitacao-formulario-imagem{
+        width: 100%;
+    }
+    .solicitacao-formulario-botao form button{
+        margin: 80px auto;
+        font-size: 30px;
+        padding: 20px 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

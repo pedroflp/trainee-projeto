@@ -1,0 +1,113 @@
+/* Especialidades Gerais */
+#especialidades-gerais{
+    padding-top: 150px;
+}
+.especialidades-gerais-container{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+.voltar-para-pagina-anterior-botao i{
+    background: rgb(221, 234, 247);
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 20px;
+    margin-bottom: -50px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.voltar-para-pagina-anterior-botao i:hover{
+    background: rgb(190, 223, 255);
+}
+.especialidades-gerais-content h1{
+    text-align: center;
+    margin: 30px 0px 20px;
+    color: rgb(24,24,24);
+}
+.linha-abaixo-titulo{
+    border-bottom: 2px solid black;
+    width: 10%;
+    margin: auto;
+}
+.especialidades-gerais-cards{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 20px 20px;
+}
+.especialidades-gerais-card{
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 23%;
+    margin: 80px auto;
+    padding: 20px 0px 0px;
+}
+.especialidades-gerais-card img{
+    width: 40%;
+    height: 100px;
+    background: rgb(255, 255, 255);
+    padding: 0px 20px;
+    border: none;
+    margin: -70px auto 0px;
+    -webkit-user-drag: none;
+}
+.especialidades-gerais-card h3{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    margin: 20px auto 0px;
+    width: 80%;
+    text-transform: capitalize;
+}
+.especialidades-gerais-card p{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    width: 80%;
+    height: 200px;
+    margin: 20px auto;
+}
+.especialidades-gerais-card button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #CF6F80;
+    border: 8px solid rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 30px;
+    margin: 0px auto -30px;
+    padding: 10px 50px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+.especialidades-gerais-card button:hover{
+    background: rgb(165, 86, 99);
+    transform: scale(1.05);
+}
+
+/* Responsive Codes */
+@media screen and (max-width: 1600px){
+    .especialidades-gerais-card{
+        width: 30%;
+    }
+}
+@media screen and (max-width: 1250px){
+    #especialidades-gerais{
+        padding-top: 200px;
+    }
+    .especialidades-gerais-card{
+        width: 45%;
+    }
+}

@@ -1,0 +1,209 @@
+/* CSS - CONFIGURAÇÕES GERAIS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+body h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+}
+body h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+}
+body h3{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+}
+body span{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+}
+body p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;   
+}
+body a{
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
+/* Seletor de Caracteres */
+::selection{
+    background: #F4DAEA;
+    color: black;
+}
+/* Barra Lateral de Navegação */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 0px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(175, 175, 175); 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #CF6F80; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #A04454; 
+}
+
+/* NAVBAR DESKTOP */
+#navbar-desktop{
+    background: #F4DAEA;
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    padding: 10px 0px 0px;
+    z-index: 99;
+}
+.navbar-desktop-container{
+    width: 95%;
+    margin: auto;
+}
+.navbar-desktop-container img{
+    width: 200px;
+    margin: 5px;
+}
+.navbar-desktop-links{
+    display: flex;
+    float: right;
+    flex-direction: row;
+}
+/* Sections links */
+.navbar-desktop-section-links{
+    display: flex;
+    flex-direction: row;
+    padding-right: 10px;
+}
+.navbar-desktop-section-links li{
+    list-style: none;
+    margin: 15px 0px;
+}
+.navbar-desktop-section-links li a{
+    text-decoration: none;
+    font-size: 16px;
+    padding: 25px 20px;
+    color: #8E1F67;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+.navbar-desktop-section-links li a:hover{
+    border-bottom: 2px solid #8E1F67;   
+}
+.navbar-desktop-section-links .active{
+    background: rgb(253, 211, 238);
+    border-bottom: 2px solid #8E1F67;  
+}
+/* Social media links */
+.navbar-desktop-social-links{
+    display: flex;
+    height: 30px;
+    margin: 10px auto;
+    padding-left: 20px;
+    flex-direction: row;
+    border-left: 1px solid rgb(250, 191, 229);
+}
+.navbar-desktop-social-links li{
+    list-style: none;
+    margin: 3px 0px;
+}
+.navbar-desktop-social-links li a{
+    color: rgb(26, 26, 26);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 20px 10px;
+    transition: 0.3s ease-in-out;
+}
+.navbar-desktop-social-links li a i{
+    font-size: 25px;
+}
+.navbar-desktop-social-links li a:hover{
+    color: #8E1F67;
+}
+
+/* NAVBAR MOBILE */
+.menu-navbar-mobile-botao{
+    display: none;
+    float: right;
+    font-size: 70px;
+    padding: 25px;
+    color: white;
+    transition: 0.4s ease-in-out;
+}
+.navbar-mobile-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    right: 0;
+    background: #F4DAEA;
+    overflow-x: hidden;
+    transition: 0.5s;
+    margin-top: 130px;
+}
+.navbar-mobile-container a{
+    text-align: right;
+    padding: 20px 30px;
+    text-decoration: none;
+    font-size: 40px;
+    color: #8E1F67;
+    display: block;
+    transition: 0.3s;
+}
+.navbar-mobile-container .active,
+.navbar-mobile-container a:active{
+    background: #EAB9D7;
+    color: #8E1F67;
+    text-decoration: none;
+}
+.navbar-mobile-container a{
+    color: #8E1F67;
+}
+.navbar-mobile-social-links{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    position: absolute;
+    bottom: 100px;
+}
+.navbar-mobile-social-links a{
+    color: black;
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+.navbar-mobile-container .close-navbar-mobile-botao{
+    position: absolute;
+    top: 0;
+    color: white;
+    right: 25px;
+    font-size: 36px;
+    transition: 0.4s ease-in-out;
+}
+
+/* Responsive Codes */
+@media screen and (max-width: 1170px){
+    .navbar-desktop-links{
+        display: none;
+    }
+    .navbar-desktop-container img{
+        width: 40%;
+        margin-top: 20px;
+    }
+    .menu-navbar-mobile-botao{
+        display: block;
+    }
+}

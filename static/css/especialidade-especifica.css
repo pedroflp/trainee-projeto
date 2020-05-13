@@ -218,8 +218,6 @@
 }
 .formulario-agendar-consulta form input:hover,
 .formulario-agendar-consulta form input:focus,
-.formulario-agendar-consulta form select:hover,
-.formulario-agendar-consulta form select:focus,
 .formulario-agendar-consulta form textarea:hover,
 .formulario-agendar-consulta form textarea:focus{
     border: 1px solid rgba(73, 73, 73);
@@ -244,12 +242,6 @@
 .formulario-agendar-consulta form input[type = "submit"]:hover{
     background: rgb(197, 68, 89);
     border: none;
-}
-
-.formulario-agendar-consulta form input:required:invalid,
-.formulario-agendar-consulta form select:required:invalid,
-.formulario-agendar-consulta form textarea:required:invalid{
-    border: 2px solid red;
 }
 
 /* Responsive Codes */

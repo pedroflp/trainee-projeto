@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#home{
+    padding-top: 50px;
+    background: url("../imagens/background.png")no-repeat;
+    background-size: cover;
+}
+.home-container{
+    width: 95%;
+    margin: auto;
+    padding: 15% 0 20%;
+}
+.home-content{
+    display: flex;
+    flex-direction: column;
+}
+.home-content h1{
+    font-family: 'Montserrat';
+    font-size: 48px;
+    font-weight: 700;
+    margin: 10px 0px;
+    color: #AA578D;
+}
+.linha-abaixo-titulo-home{
+    border-bottom: 2px solid #AA578D;
+    width: 80px;
+}
+.home-content span{
+    width: 500px;
+    font-family: 'Montserrat';
+    font-size: 22px;
+    margin: 30px 0px;
+}
+.home-content a{
+    width: 300px;
+    padding: 15px 20px;
+    background: #8E1F67;
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.home-content a:hover{
+    background: rgb(114, 24, 83);
+}
+.home-content svg{
+    display: none;
+    margin: 50px 0px;
+}
+
+/* Responsive Codes */
+@media screen and (max-width: 1400px){
+    #home{
+        background-position-y: 50px;
+    }
+    .home-content h1{
+        font-size: 40px;
+    }
+    .home-content span{
+        width: 400px;
+        font-size: 18px;
+    }
+    .home-content a{
+        width: 260px;
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 1200px){
+    #home{
+        background: none;
+    }
+    .home-container{
+        padding: 20% 0 10%;
+    }
+    .home-content{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: auto;
+    }
+    .home-content h1{
+        width: 90%;
+        font-size: 45px;
+    }
+    .home-content span{
+        width: 90%;
+        font-size: 32px;
+    }
+    .home-content svg{
+        display: block;
+        width: 90%;
+    }
+    .home-content a{
+        width: 400px;
+        font-size: 24px;
+    }
+}
