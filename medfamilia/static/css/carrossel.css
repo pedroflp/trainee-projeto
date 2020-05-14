@@ -139,6 +139,7 @@
         height: 500px;
     }
     .carousel-especialidade-card img{
+        width: 250px;
         height: 200px;
         margin-top: -120px;
     }

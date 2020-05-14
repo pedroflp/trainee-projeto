@@ -10,7 +10,7 @@
 .voltar-para-pagina-anterior-botao{
     width: 100px;
 }
-.voltar-para-pagina-anterior-botao{
+.voltar-para-pagina-anterior-botao i{
     background: rgb(221, 234, 247);
     padding: 15px 40px;
     border-radius: 30px;
